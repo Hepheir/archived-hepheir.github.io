@@ -3,10 +3,10 @@ title:  "[Splendor] 사용할 기술 스택 정하기"
 excerpt: "스플렌더 프로젝트를 기획해보자."
 
 categories:
-- "Jekyll"
+- "Splendor"
 
 tags:
-- [Blog, jekyll, Github, Git, minimal-mistake]
+- [Project, Splendor]
 
 toc: true
 toc_sticky: true
