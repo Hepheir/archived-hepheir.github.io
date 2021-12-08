@@ -25,7 +25,7 @@ hidden: false
 
 성인이 되어 보는 생애 첫 뮤지컬이다 😄
 
-![](https://cvws.icloud-content.com/S/AdOal5m_7kKtw5Ctx3dW2MwNkV3t/A310D0A2-77E1-43CD-82C8-457B06CE0471.JPG?o=AgWPduUE9E2z8r61EKWbNiBuCLTVv6-EtQnjZYL9is4j&v=1&z=https%3A%2F%2Fp58-content.icloud.com%3A443&x=1&a=CAog1SgS80-dml6R0zqNpU29u8xx7cwx4UUE1rONfU5bWj8SZRDL5qnN2S8Yy_280tkvIgEAUgQNkV3taiXTRnYlkPSuY9dQniLziBJyZCBOwF3AsuP1Lj9g-J2zGLYQX4bzciVCbnurfEENYe8p78k40_R3CJ_IqoYJEJXYlxwcO1o39HMnk6qx&e=1638971424&r=4f21a53e-ca6c-420c-ac84-269c95c3d2be-9&s=u0tYN1utrazibgg6g0fbRcOUf_I)
+![포토존에서](/assets/images/phantom-photo-zone.JPG)
 
 
 ## 보게 된 계기
@@ -77,7 +77,7 @@ hidden: false
 
 ## 캐스팅
 
-![Today's Cast](https://cvws.icloud-content.com/S/AR1c4rhXnSeiB6-CJD77xOsJdqLB/3FE5314B-0076-4EF4-A0FC-E836B24B373E.JPG?o=ApAIDtp4PFvoLb6ytn4NHXzfF4QnmZFfRJw6QRqiGY6q&v=1&z=https%3A%2F%2Fp58-content.icloud.com%3A443&x=1&a=CAogOfWnasWXKajjIgfVYe_XbEyGlaebdvcXOvUeEScRSfESZRDO5qnN2S8Yzv280tkvIgEAUgQJdqLBaiUh7J0oSnaQVniX_rHwgmiL1ghZQtaidFkHLMNb0GujT9klviYcciXHGiED--pahQZl4SClx62Og78tsC4PjXKYgGXgSrekmrbL8mJt&e=1638971424&r=4f21a53e-ca6c-420c-ac84-269c95c3d2be-22&s=3E7x04wSx1uobYpFlFI7IEejBJ4)
+![Today's Cast](/assets/images/phantom-todays-cast.JPG)
 
 * 에릭(팬텀) - 박은태
 * 크리스틴 다에 - 임선혜
