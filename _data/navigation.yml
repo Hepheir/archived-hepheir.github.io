@@ -4,8 +4,8 @@ main:
     url: /
   - title: "🧳 Introduce"
     url: /introduce/
-  # - title: "Category"
-  #   url: /categories/
+  - title: "Category"
+    url: /categories/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
