@@ -14,7 +14,7 @@ toc_sticky: true
 date: 2021-12-07
 last_modified_at: 2021-12-08
 
-hidden: false
+hidden: true
 ---
 
 # 서론
