@@ -13,6 +13,8 @@ toc_sticky: true
 
 date: 2021-12-05
 last_modified_at: 2021-12-05
+
+hidden: true
 ---
 
 스플렌더 프로젝트를 기획해보자.
