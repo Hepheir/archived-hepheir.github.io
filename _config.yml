@@ -280,6 +280,7 @@ defaults:
   - scope:
       path: ""
     values:
+      author_profile: true
       sidebar:
         nav: categories
   # _posts
