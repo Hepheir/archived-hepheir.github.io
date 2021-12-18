@@ -1,6 +1,5 @@
 ---
 title:  "[웹브라우저] Safari에서 개발자 도구 사용하기"
-excerpt: "Safari에서 개발자 도구를 사용해보자."
 
 categories:
   - "Web Browser"
@@ -17,6 +16,10 @@ toc_sticky: true
 date: 2021-12-14
 last_modified_at: 2021-12-14
 ---
+
+Safari에서 개발자 도구를 사용해보자.
+
+<!-- more -->
 
 ## 개발자 도구 활성화
 
