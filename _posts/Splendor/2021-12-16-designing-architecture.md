@@ -55,14 +55,22 @@ DB와 백엔드(BE) 서버의 재설계가 필요해졌다.
 
 ![](/assets/images/2021-12-16-legacy-properties.png)
 
-#### 개발카드의 경우
+#### 개발 카드의 경우
+
+![개발 카드](/assets/images/2021-12-18-development-card.png)
+![개발 카드 배경](/assets/images/2021-12-18-development-card-backflip.png)
+
 * 레벨 (level): 구매 난이도. 카드가 놓일 행을 구분하는데 사용.
 * 승점 (score)
 * 보너스 (bonus): 보석종류를 나타내는 문자<sup>[[2]](#fn-2)</sup>
 * 배경 (background)
 * 비용 (cost): 필요한 보석으로 이루어진 문자열<sup>[[3]](#fn-3)</sup>
 
-#### 귀족타일의 경우
+#### 귀족 타일의 경우
+
+![귀족 타일](/assets/images/2021-12-18-noble-tile.png)
+![귀족 타일](/assets/images/2021-12-18-noble-tile-backflip.png)
+
 * 승점 (score)
 * 배경 (background)
 * 비용 (cost): 필요한 보석으로 이루어진 문자열<sup>[[3]](#fn-3)</sup>
