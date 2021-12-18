@@ -1,8 +1,8 @@
 # main links
 main:
-  - title: "🏠 Home"
+  - title: "Home"
     url: /
-  - title: "🧳 Introduce"
+  - title: "Introduce"
     url: /introduce/
   - title: "Category"
     url: /categories/
