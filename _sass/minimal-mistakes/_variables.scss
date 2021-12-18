@@ -29,8 +29,18 @@ $bodoni: "Bodoni MT", serif !default;
 $calisto: "Calisto MT", serif !default;
 $garamond: Garamond, serif !default;
 
-$global-font-family: $sans-serif !default;
-$header-font-family: $sans-serif !default;
+/* Cafe24Oneprettynight */
+@font-face {
+   font-family: 'Cafe24Oneprettynight';
+   src: local('Cafe24Oneprettynight'), url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+$Cafe24Oneprettynight: Cafe24Oneprettynight;
+
+$global-font-family: $Cafe24Oneprettynight !default;
+$header-font-family: $Cafe24Oneprettynight !default;
 $caption-font-family: $serif !default;
 
 /* type scale */
