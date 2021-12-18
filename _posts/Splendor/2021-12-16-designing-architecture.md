@@ -12,12 +12,12 @@ toc: true
 toc_sticky: true
 
 date: 2021-12-16
-last_modified_at: 2021-12-17
+last_modified_at: 2021-12-18
 ---
 
 ## 서론
 
-![](/assets/images/2021-12-16-splendor-legacy-development.png)
+![](/assets/images/2021-12-17-splendor-legacy-development.png)
 
 지난 3개월간<sup>[[1]](#fn-1)</sup> 스플렌더 &lt;기본판&gt;을 클론코딩하고 있었다.
 
