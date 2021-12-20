@@ -2,7 +2,7 @@
 title:  "[Splendor] 사이드 프로젝트 : 스플렌더"
 
 categories:
-  - "Splendor"
+  - "splendor"
 
 tags:
   - "side-project"

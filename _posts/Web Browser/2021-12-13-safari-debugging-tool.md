@@ -2,7 +2,7 @@
 title:  "[웹브라우저] Safari에서 개발자 도구 사용하기"
 
 categories:
-  - "Web Browser"
+  - "web-browser"
 
 tags:
   - "Web Browser"
