@@ -22,6 +22,8 @@ categories:
         url: /categories/#splendor
   - title: "💃 뮤지컬"
     children:
+      - title: "프랑켄슈타인"
+        url: /categories/#musical-frankenstein
   - title: "🤔 분류되지 않음"
     children:
       - title: "macOS"
