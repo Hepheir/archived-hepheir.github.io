@@ -1,11 +1,11 @@
 # main links
 main:
-  - title: "🏠 Home"
+  - title: "Home"
     url: /
-  - title: "🧳 Introduce"
+  - title: "Introduce"
     url: /introduce/
-  # - title: "Category"
-  #   url: /categories/
+  - title: "Category"
+    url: /categories/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
@@ -14,3 +14,17 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+categories:
+  - title: "💻 사이드 프로젝트"
+    children:
+      - title: "Splendor"
+        url: /categories/#splendor
+  - title: "🤔 분류되지 않음"
+    children:
+      - title: "macOS"
+        url: /categories/#macos
+      - title: "Web Browser"
+        url: /categories/#web-browser
+      - title: "카테고리 없음"
+        url: /categories/#uncategorized
