@@ -20,6 +20,8 @@ categories:
     children:
       - title: "Splendor"
         url: /categories/#splendor
+  - title: "💃 뮤지컬"
+    children:
   - title: "🤔 분류되지 않음"
     children:
       - title: "macOS"
