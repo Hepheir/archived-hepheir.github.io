@@ -1,25 +1,20 @@
 ---
 title:  "[Splendor] 사용할 기술 스택 정하기"
-excerpt: "스플렌더 프로젝트를 기획해보자."
-
 categories:
 - "splendor"
-
 tags:
-- [Project, Splendor]
-
-toc: true
-toc_sticky: true
-
+- Project
+- Splendor
 date: 2021-12-05
 last_modified_at: 2021-12-05
-
-hidden: true
+toc: true
+toc_sticky: true
+published: false
 ---
 
 스플렌더 프로젝트를 기획해보자.
 
-* * *
+<!-- more -->
 
 # ✏️ 서론
 
