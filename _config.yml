@@ -297,6 +297,17 @@ defaults:
       comments: true
       share: false
       related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      author_profile: true
+      show_date: true
+      read_time: false
+      comments: false
+      share: false
+      related: false
 
 # 한국이 GMT +0900이라,
 # 가끔 미래의 포스트로 취급되어 렌더링이 되지 않는 포스트가 생김.
