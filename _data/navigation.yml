@@ -16,15 +16,27 @@ main:
   #   url: /sitemap/
 
 categories:
-  - title: "💻 사이드 프로젝트"
+  - title: "📓 Problem Solving"
+    children:
+      - title: "Baekjoon Online Judge"
+        url: /categories/#baekjoon-online-judge
+
+  - title: "🗃 Programming"
+    children:
+      - title: "Processing"
+        url: /categories/#processing
+
+  - title: "🪜 Side Projects"
     children:
       - title: "Splendor"
         url: /categories/#splendor
-  - title: "💃 뮤지컬"
+
+  - title: "💃 Hobbies"
     children:
       - title: "프랑켄슈타인"
         url: /categories/#musical-frankenstein
-  - title: "🤔 분류되지 않음"
+
+  - title: "🤔 Others"
     children:
       - title: "macOS"
         url: /categories/#macos
