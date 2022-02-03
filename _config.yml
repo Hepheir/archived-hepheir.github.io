@@ -21,7 +21,7 @@ title_separator          : "::"
 subtitle                 : "기록으로 남기는 경험 블로그" # site tagline that appears below site title in masthead
 name                     : "김동주"
 description              : "자기 개발 & 취미 블로그"
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://hepheir.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "Hepheir/hepheir.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
