@@ -2,7 +2,7 @@
 title:  "[macOS] OS 업데이트 후 개발도구 오류 (xcrun: error: invalid active developer path)"
 excerpt: "macOS Monterey로 업데이트 하고나니 생긴 개발도구 오류를 해결해보자."
 categories:
-  - "macos"
+  - "macOS"
 tags:
   - "Xcode"
   - "Command Line Interface"

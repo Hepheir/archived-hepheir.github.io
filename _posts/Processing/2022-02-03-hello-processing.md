@@ -1,7 +1,7 @@
 ---
 title:  "[프로세싱] 프로세싱 시작하기"
 categories:
-  - "processing"
+  - "Processing"
 # tags:
 ---
 

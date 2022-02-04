@@ -1,7 +1,7 @@
 ---
 title:  "[Splendor] 사이드 프로젝트 : 스플렌더"
 categories:
-  - "splendor"
+  - "Splendor"
 tags:
   - "side-project"
 date: 2021-12-16

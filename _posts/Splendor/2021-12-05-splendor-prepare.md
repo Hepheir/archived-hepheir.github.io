@@ -1,7 +1,7 @@
 ---
 title:  "[Splendor] 사용할 기술 스택 정하기"
 categories:
-- "splendor"
+- "Splendor"
 tags:
 - Project
 - Splendor
