@@ -310,7 +310,7 @@ defaults:
       comments: false
       share: false
       related: false
-  # _posts
+  # _drafts
   - scope:
       path: ""
       type: drafts
