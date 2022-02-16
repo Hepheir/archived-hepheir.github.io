@@ -22,8 +22,11 @@ categories:
       - title: "Baekjoon Online Judge"
         url: /categories/#baekjoon-online-judge
 
-  - title: "🗃 Programming"
+  - title: "🗃 Study"
     children:
+      - title: "Algorithm"
+        url: /categories/#algorithm
+
       - title: "Processing"
         url: /categories/#processing
 
@@ -32,14 +35,18 @@ categories:
       - title: "Splendor"
         url: /categories/#splendor
 
+      - title: "Quoridor"
+        url: /categories/#quoridor
+
   - title: "💃 Hobbies"
     children:
-      - title: "프랑켄슈타인"
-        url: /categories/#musical-frankenstein
+      - title: "My 플레이리스트"
+        url: /categories/#my-playlist
 
   - title: "🤔 Others"
     children:
       - title: "macOS"
         url: /categories/#macos
+
       - title: "Web Browser"
         url: /categories/#web-browser
