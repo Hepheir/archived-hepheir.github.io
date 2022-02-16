@@ -1,13 +1,8 @@
 ---
-title:  "[Splendor] 사이드 프로젝트 : 스플렌더"
+title:  "사이드 프로젝트 : 스플렌더"
 categories:
+  - "Side Project"
   - "Splendor"
-tags:
-  - "side-project"
-date: 2021-12-16
-last_modified_at: 2021-12-18
-toc: true
-toc_sticky: true
 ---
 
 클론코딩중이던 사이드 프로젝트: '스플렌더'를 소개합니다.

@@ -1,7 +1,8 @@
 ---
-title:  "[뮤지컬 프랑켄슈타인] 사연 넘버별 가사"
+title:  "뮤지컬 \"프랑켄슈타인\" 사연 넘버별 가사"
 categories:
-  - "Musical"
+  - "Hobby"
+  - "Music"
 tags:
   - "Frankenstein"
 last_modified_at: 2022-02-07

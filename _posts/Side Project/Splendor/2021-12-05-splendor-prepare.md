@@ -1,14 +1,8 @@
 ---
-title:  "[Splendor] 사용할 기술 스택 정하기"
+title:  "사용할 기술 스택 정하기"
 categories:
+- "Side Project"
 - "Splendor"
-tags:
-- Project
-- Splendor
-date: 2021-12-05
-last_modified_at: 2021-12-05
-toc: true
-toc_sticky: true
 published: false
 ---
 

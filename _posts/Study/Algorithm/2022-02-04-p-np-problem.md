@@ -3,7 +3,6 @@ title: "P-NP 문제 (P versus NP problem)"
 categories:
   - "Study"
   - "Algorithm"
-date: 2022-02-04
 ---
 
 PS를 하다보면 자주 보이지만, 잘 알지 못했던 P-NP 문제란 무엇인지 알아보자.

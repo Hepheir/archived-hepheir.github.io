@@ -1,8 +1,8 @@
 ---
-title:  "[프로세싱] 프로세싱 시작하기"
+title:  "프로세싱 시작하기"
 categories:
+  - "Study"
   - "Processing"
-# tags:
 ---
 
 프로세싱을 다운받아 설치하고 첫 스케치를 시작해보자.
