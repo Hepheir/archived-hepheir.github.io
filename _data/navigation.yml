@@ -40,8 +40,8 @@ categories:
 
   - title: "💃 Hobbies"
     children:
-      - title: "My 플레이리스트"
-        url: /categories/#my-playlist
+      - title: "Vocal"
+        url: /categories/#vocal
 
   - title: "🤔 Others"
     children:
