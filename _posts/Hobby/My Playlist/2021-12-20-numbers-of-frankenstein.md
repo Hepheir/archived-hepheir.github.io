@@ -2,10 +2,11 @@
 title:  "뮤지컬 \"프랑켄슈타인\" 사연 넘버별 가사"
 categories:
   - "Hobby"
-  - "Music"
+  - "My Playlist"
 tags:
   - "Frankenstein"
 last_modified_at: 2022-02-07
+published: false
 ---
 
 뮤지컬 프랑켄슈타인의 넘버별 가사입니다.
