@@ -108,7 +108,6 @@ author:
   avatar           : "https://avatars.githubusercontent.com/u/19310326" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "🔥😵‍💫 지식변태・25살 🥸🔥"
   # location         : ""
-  # email            : ""
   links:
     - label: "hepheir@gmail.com"
       icon: "fas fa-fw fa-envelope-square"
