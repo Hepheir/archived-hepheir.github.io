@@ -1,19 +1,20 @@
 # main links
 main:
   - title: "Home"
+    description: "Home"
+    icon: "fas fa-home"
     url: /
-  - title: "Introduce"
-    url: /introduce/
-  - title: "Category"
+
+  - title: "Git Repository"
+    description: "Git Repository"
+    icon: "fas fa-code-branch"
+    url: https://github.com/hepheir/hepheir.github.io
+
+  - title: "Categories"
+    description: "Categories"
+    icon: fas fa-bookmark
     url: /categories/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+
 
 categories:
   - title: "📓 Problem Solving"
