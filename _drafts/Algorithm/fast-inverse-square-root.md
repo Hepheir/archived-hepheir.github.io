@@ -2,7 +2,6 @@
 title: "[Algorithm] 고속 역 제곱근 (Fast Inverse Squre Root)"
 categories:
   - "Algorithm"
-date: 2022-02-04
 ---
 
 > `i  = 0x5f3759df - ( i >> 1 );               // what the fuck?`
