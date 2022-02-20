@@ -1,5 +1,5 @@
 ---
-title: "[Algorithm] 고속 역 제곱근 (Fast Inverse Squre Root)"
+title: "고속 역 제곱근 (Fast Inverse Squre Root)"
 categories:
   - "Algorithm"
 ---
