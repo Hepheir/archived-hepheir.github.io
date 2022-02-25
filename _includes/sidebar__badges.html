@@ -1,0 +1,7 @@
+{% assign badges = site.data.sidebar.badges %}
+
+{% for badge in badges %}
+  <p>
+    <img style="width: auto;" src="{{ badge.src }}"/>
+  </p>
+{% endfor %}
