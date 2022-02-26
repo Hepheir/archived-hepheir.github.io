@@ -1,8 +1,7 @@
 ---
 title: "코키아 - 부엉이 (Kokia - Fukurou)"
 categories:
-  - "Hobby"
-  - "Vocal"
+  - "My Playlist"
 hidden: true
 ---
 
