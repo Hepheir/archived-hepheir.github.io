@@ -1,0 +1,27 @@
+{% assign categories = site.categories | sort %}
+
+<nav class="nav__list">
+  <h3 class="nav__title" style="padding-left: 0;">
+    {{ site.data.ui-text[site.locale].categories_label | default: "Categories" }}
+    <label for="ac-categories">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle Menu" }}</label>
+  </h3>
+  <input id="ac-categories" name="accordion-categories" type="checkbox" />
+  <ul class="nav__items">
+    <li>
+      <!-- <a href="/categories/"><span class="nav__sub-title">{{ site.data.ui-text[site.locale].categories_label | default: "Categories" }}</span></a> -->
+      <ul>
+        {% for category in categories %}
+          {% assign title = category[0] %}
+          {% assign posts = category[1] %}
+          {% capture url %}/categories/#{{ title | slugify }}{% endcapture %}
+          <li>
+            <a href="{{ url }}"{% if url == page.url %} class="active"{% endif %}>
+              {{ title }}
+              <span style="opacity: .33;">({{posts.size}})</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </li>
+  </ul>
+</nav>
