@@ -14,39 +14,3 @@ main:
     description: "Categories"
     icon: fas fa-bookmark
     url: /categories/
-
-
-categories:
-  - title: "📓 Problem Solving"
-    children:
-      - title: "Baekjoon Online Judge"
-        url: /categories/#baekjoon-online-judge
-
-  - title: "🗃 Study"
-    children:
-      - title: "Algorithm"
-        url: /categories/#algorithm
-
-      - title: "Processing"
-        url: /categories/#processing
-
-  - title: "🪜 Side Projects"
-    children:
-      - title: "Splendor"
-        url: /categories/#splendor
-
-      - title: "Quoridor"
-        url: /categories/#quoridor
-
-  - title: "💃 Hobbies"
-    children:
-      - title: "Vocal"
-        url: /categories/#vocal
-
-  - title: "🤔 Others"
-    children:
-      - title: "macOS"
-        url: /categories/#macos
-
-      - title: "Web Browser"
-        url: /categories/#web-browser
