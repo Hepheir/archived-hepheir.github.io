@@ -1,7 +1,6 @@
 ---
 title:  "프로세싱 시작하기"
 categories:
-  - "Study"
   - "Processing"
 ---
 
