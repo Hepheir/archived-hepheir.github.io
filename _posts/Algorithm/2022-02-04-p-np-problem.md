@@ -1,7 +1,6 @@
 ---
 title: "P-NP 문제 (P versus NP problem)"
 categories:
-  - "Study"
   - "Algorithm"
 ---
 
