@@ -1,7 +1,7 @@
 ---
 title: ""
 categories:
-  - "Musical"
+  - "My Playlist"
 tags:
   - ""
 hidden: true
