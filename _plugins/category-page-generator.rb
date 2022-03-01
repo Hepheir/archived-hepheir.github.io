@@ -1,4 +1,4 @@
-module SamplePlugin
+module CategoryPageGeneratingPlugin
   class CategoryPageGenerator < Jekyll::Generator
     safe true
 
@@ -24,7 +24,11 @@ module SamplePlugin
       # Initialize data hash with a key pointing to all posts under current category.
       # This allows accessing the list in a template via `page.linked_docs`.
       @data = {
-        'linked_docs' => posts
+        'linked_docs' => posts,
+        'title' => category,
+        'layout' => 'category',
+        'permalink' => 'categories/:category/',
+        'taxonomy' => category,
       }
 
       # Look up front matter defaults scoped to type `categories`, if given key
