@@ -13,7 +13,7 @@
         {% for category in categories %}
           {% assign title = category[0] %}
           {% assign posts = category[1] %}
-          {% capture url %}/categories/#{{ title | slugify }}{% endcapture %}
+          {% capture url %}/categories/{{ title }}{% endcapture %}
           <li>
             <a href="{{ url }}"{% if url == page.url %} class="active"{% endif %}>
               {{ title }}
