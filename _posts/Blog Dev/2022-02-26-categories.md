@@ -1,5 +1,5 @@
 ---
-title: "[Minimal Mistakes] 카테고리 페이지 만들기"
+title: "[Minimal Mistakes] 전체 카테고리 페이지 만들기"
 categories:
 - "Blog Dev"
 tags:
