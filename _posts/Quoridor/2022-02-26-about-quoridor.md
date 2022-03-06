@@ -1,5 +1,5 @@
 ---
-title:  "[Quoridor] 1. 보드게임 \"쿼리도\" 소개"
+title:  "[Quoridor] 보드게임 \"쿼리도\" 소개"
 categories:
   - "Quoridor"
 tags:
