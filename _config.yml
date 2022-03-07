@@ -43,7 +43,7 @@ comments:
   utterances:
     theme                : "github-light" # "github-light" (default), "github-dark"
     issue_term           : "pathname" # "pathname" (default)
-    repository           : "Hepheir/hepheir.github.io-comments"
+    repository           : "Hepheir/hepheir.github.io"
 
   # giscus:
   #   repo_id              : # Shown during giscus setup at https://giscus.app
