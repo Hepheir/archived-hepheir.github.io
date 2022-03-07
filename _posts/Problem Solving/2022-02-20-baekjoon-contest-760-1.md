@@ -1,9 +1,9 @@
 ---
 title: "[BOJ 대회] 시간복잡도를 배운 도도"
 categories:
-  - "Baekjoon Online Judge"
-tags:
   - "Problem Solving"
+tags:
+  - "Baekjoon Online Judge"
   - "2022 ICPC Sinchon Winter Algorithm Camp Contest Open"
 ---
 
