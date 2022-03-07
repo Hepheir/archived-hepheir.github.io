@@ -1,5 +1,5 @@
 ---
-title: "[BOJ 대회] 시간복잡도를 배운 도도"
+title: "[BOJ] 시간복잡도를 배운 도도"
 categories:
   - "Problem Solving"
 tags:
