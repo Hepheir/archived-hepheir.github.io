@@ -5,7 +5,10 @@ categories:
 tags:
 - "Visual Studio Code"
 - "Visual Studio Code Extension"
+excerpt: "Jekyll을 이용하는 GitHub Pages 블로그를 관리하면서 포스트를 관리하는 것이 굉장히 불편하다고 느꼈습니다. 때 마침, Visual Studio Code의 확장프로그램을 한 번 제작해보고 싶었기에 Jekyll의 포스트 관리 메커니즘을 편리하게 보강해줄 확장을 개발해보기로 하였습니다."
 ---
+
+## Jekyll
 
 [Jekyll](https://jekyllrb.com/)은 _posts/ 아래에 `YYYY-MM-DD-title.md` 형식의 이름을 사용하는 마크다운 문서를 배치해두면, 빌드시에 자동으로 해당 문서의 내용으로 이루어진 페이지들을 생성해줍니다. 아직 작성중인 포스트라면, _drafts/ 아래에 `title.md` 형식으로 문서를 보관하는 것도 가능하죠.
 
