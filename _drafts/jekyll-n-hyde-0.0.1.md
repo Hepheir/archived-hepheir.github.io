@@ -1,5 +1,5 @@
 ---
-title: "[VS Code Extension] Jekyll N Hyde 개발 일지 (v0.0.1)"
+title: "[VS Code Extension] Jekyll N Hyde를 만들며"
 categories:
 - "Side Project"
 tags:
