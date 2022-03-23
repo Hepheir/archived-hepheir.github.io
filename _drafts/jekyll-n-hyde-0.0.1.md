@@ -3,6 +3,7 @@ title: "[VS Code Extension] Jekyll N Hyde를 만들며"
 categories:
 - "Side Project"
 tags:
+- "Jekyll N Hyde"
 - "Visual Studio Code"
 - "Visual Studio Code Extension"
 excerpt: "Jekyll을 이용하는 GitHub Pages 블로그를 관리하면서 포스트를 관리하는 것이 굉장히 불편하다고 느꼈습니다. 때 마침, Visual Studio Code의 확장프로그램을 한 번 제작해보고 싶었기에 Jekyll의 포스트 관리 메커니즘을 편리하게 보강해줄 확장을 개발해보기로 하였습니다."
