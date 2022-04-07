@@ -1,1 +1,6 @@
-{% if include.prefix %}[{{ include.prefix }}]{% endif %} {% if include.title %}{{ include.title | markdownify | remove: "<p>" | remove: "</p>" }}{% endif %}
+{% if include.prefix %}
+    <span class="prefix">[{{ include.prefix }}]</span>
+{% endif %}
+{% if include.title %}
+    <span>{{ include.title | markdownify | remove: "<p>" | remove: "</p>" }}</span>
+{% endif %}

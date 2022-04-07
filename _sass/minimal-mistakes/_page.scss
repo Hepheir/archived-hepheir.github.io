@@ -80,6 +80,10 @@ body {
   & + .page__meta {
     margin-top: -0.5em;
   }
+
+  .prefix {
+    opacity: 0.75;
+  }
 }
 
 .page__lead {
