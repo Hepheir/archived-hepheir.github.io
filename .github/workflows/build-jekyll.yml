@@ -37,7 +37,9 @@ jobs:
       - name: Apply update to master
         continue-on-error: true
         run: |
-          git commit -am "chore(_posts): merge submodules into master\n\n[skip actions]"
+          git commit -am "chore(_posts): merge submodules into master
+
+          [skip actions]"
           git push origin master
 
       # Use GitHub Actions' cache to cache dependencies on servers
