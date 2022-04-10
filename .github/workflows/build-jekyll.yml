@@ -34,7 +34,7 @@ jobs:
 
       - name: Apply update to master
         run: |
-          git commit -am "chore(_posts): update submodule"
+          git commit -am "chore(_posts): update submodule\n\n[skip actions]"
           git push origin master
 
       # Use GitHub Actions' cache to cache dependencies on servers
