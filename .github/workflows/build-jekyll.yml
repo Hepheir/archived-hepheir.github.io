@@ -31,6 +31,9 @@ jobs:
       - name: Update submodule
         run: |
           git submodule update --remote
+
+      - name: Apply update to master
+        run: |
           git commit -am "chore(_posts): update submodule"
           git push origin master
 
