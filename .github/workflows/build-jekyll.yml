@@ -23,6 +23,12 @@ jobs:
           token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
           submodules: true
 
+      - name: Update submodule
+        run: |
+          git submodule update --remote
+          git commit -am "chore(_posts): update submodule"
+          git push origin master
+
       # Use GitHub Actions' cache to cache dependencies on servers
       - uses: actions/cache@v2
         with:
