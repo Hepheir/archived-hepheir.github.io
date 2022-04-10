@@ -5,11 +5,23 @@ on:
     branches:
       - master  # Here source code branch is `master`, it could be other branch
 
+  workflow_call:
+    secrets:
+      PRIVATE_REPO_ACCESS_TOKEN:
+        # https://github.com/Hepheir/hepheir.github.io/settings/secrets/actions
+        # Add a secret named "PRIVATE_REPO_ACCESS_TOKEN" on the link above.
+        description: 'A Personal Access Token which can access to private repositories'
+        required: true
+
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+          submodules: true
 
       # Use GitHub Actions' cache to cache dependencies on servers
       - uses: actions/cache@v2
@@ -20,7 +32,8 @@ jobs:
             ${{ runner.os }}-gems-
 
       # Use GitHub Deploy Action to build and deploy to Github
-      - uses: jeffreytse/jekyll-deploy-action@v0.3.1
+      - name: Build jekyll pages
+        uses: jeffreytse/jekyll-deploy-action@v0.3.1
         with:
           provider: 'github'
           token: ${{ secrets.GITHUB_TOKEN }} # It's your Personal Access Token(PAT)
@@ -32,4 +45,4 @@ jobs:
           bundler_ver: '>=0'         # Default is latest bundler version
           cname: ''                  # Default is to not use a cname
           actor: ''                  # Default is the GITHUB_ACTOR
-          pre_build_commands: 'git submodule init && git submodule update'     # Installing additional dependencies (Arch Linux)
+          pre_build_commands: ''     # Installing additional dependencies (Arch Linux)
