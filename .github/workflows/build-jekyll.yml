@@ -35,12 +35,15 @@ jobs:
           git submodule update --remote
 
       - name: Apply update to master
+        continue-on-error: true
         run: |
-          git commit -am "chore(_posts): update submodule\n\n[skip actions]"
+          git commit -am "chore(_posts): merge submodules into master\n\n[skip actions]"
           git push origin master
 
       # Use GitHub Actions' cache to cache dependencies on servers
-      - uses: actions/cache@v2
+      - name: Cache dependencies
+        if: ${{ success() }}
+        uses: actions/cache@v2
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
@@ -49,6 +52,7 @@ jobs:
 
       # Use GitHub Deploy Action to build and deploy to Github
       - name: Build jekyll pages
+        if: ${{ success() }}
         uses: jeffreytse/jekyll-deploy-action@v0.3.1
         with:
           provider: 'github'
