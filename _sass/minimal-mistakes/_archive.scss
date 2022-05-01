@@ -93,12 +93,18 @@
 }
 
 .archive__item-teaser {
+  height: 120px;
   position: relative;
   border-radius: $border-radius;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   img {
     width: 100%;
+    max-height: 120px;
+    object-fit: cover;
   }
 }
 
