@@ -2,6 +2,7 @@
   <div class="sidebar sticky">
   {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
   {% include sidebar/badges.html %}
+  {% include sidebar/categories.html %}
   {% if page.sidebar %}
     {% for s in page.sidebar %}
       {% if s.image %}
