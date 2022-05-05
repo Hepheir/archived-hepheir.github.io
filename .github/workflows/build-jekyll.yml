@@ -39,6 +39,7 @@ jobs:
         run: |
           git commit -am "chore(_posts): merge submodules into master
 
+          Co-authored-by: Hepheir <19310326+Hepheir@users.noreply.github.com>
           [skip actions]"
           git push origin master
 
