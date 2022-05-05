@@ -1,0 +1,44 @@
+{% assign categories = site.data.sidebar.categories %}
+
+<nav class="nav__list">
+  <h3 class="nav__title" style="padding-left: 0;">
+    {{ site.data.ui-text[site.locale].categories_label | default: "Categories" }}
+    <label for="ac-categories">펼치기/접기</label>
+  </h3>
+  <input id="ac-categories" name="accordion-categories" type="checkbox" />
+  <ul class="nav__items">
+    <li>
+      <ul style="padding: 0 8px;">
+        {% for category in categories %}
+          {% if site.categories[category.taxonomy] %}
+            <li>
+              <a href="{{ category.url }}" style="font-weight: bold;">
+                {{ category.title }}
+                <span class="category-post-count" style="opacity: 0.33;">
+                  ({{ site.categories[category.taxonomy].size }})
+                </span>
+              </a>
+            </li>
+
+            {% if category.children %}
+              <ul style="padding: 0 8px;">
+                {% for subcategory in category.children %}
+                  {% if site.categories[subcategory.taxonomy] %}
+                    <li style="margin-top: 4px;">
+                      <a href="{{ subcategory.url }}">
+                        {{ subcategory.title }}
+                        <span class="category-post-count" style="opacity: 0.33;">({{ site.categories[subcategory.taxonomy].size }})</span>
+                      </a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            {% endif %}
+
+            <hr>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+  </ul>
+</nav>
