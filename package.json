@@ -1,0 +1,19 @@
+{
+  "name": "hepheir.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "banner.js",
+  "scripts": {
+    "test": "bundle exec jekyll serve --draft"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hepheir/hepheir.github.io.git"
+  },
+  "author": "19310326+Hepheir@users.noreply.github.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hepheir/hepheir.github.io/issues"
+  },
+  "homepage": "https://github.com/Hepheir/hepheir.github.io#readme"
+}
