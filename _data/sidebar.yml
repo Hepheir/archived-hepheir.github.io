@@ -1,2 +1,49 @@
 badges:
   - src: https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FHepheir&count_bg=%23DA85FD&title_bg=%233D3D3D&icon=&icon_color=%23E7E7E7&title=%E2%98%86+hits&edge_flat=true
+
+# category: 실제 카테고리 이름
+# label: 표기할 카테고리 이름
+categories:
+- title: Algorithm
+  url: /categories/algorithm/
+  taxonomy: Algorithm
+  children:
+  - title: Algospot
+    url: /categories/algospot/
+    taxonomy: Algospot
+  - title: BAEKJOON Online Judge
+    url: /categories/baekjoon-online-judge/
+    taxonomy: BAEKJOON Online Judge
+- title: Note
+  url: /categories/note/
+  taxonomy: Note
+  children:
+  - title: Java & Spring & Algorithm
+    url: /categories/java-spring-algorithm/
+    taxonomy: Java & Spring & Algorithm
+- title: Research
+  url: /categories/research/
+  taxonomy: Research
+  children:
+  - title: EICE Lab
+    url: /categories/eice-lab/
+    taxonomy: EICE Lab
+  - title: Others
+    url: /categories/others/
+    taxonomy: Others
+- title: Side Project
+  url: /categories/side-project/
+  taxonomy: Side Project
+  children:
+  - title: GitHub Blog
+    url: /categories/github-blog/
+    taxonomy: GitHub Blog
+  - title: Jekyll n Hyde
+    url: /categories/jekyll-n-hyde/
+    taxonomy: Jekyll n Hyde
+  - title: Quoridor
+    url: /categories/quoridor/
+    taxonomy: Quoridor
+  - title: Splendor
+    url: /categories/splendor/
+    taxonomy: Splendor
