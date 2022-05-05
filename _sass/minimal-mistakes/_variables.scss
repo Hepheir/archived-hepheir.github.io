@@ -165,9 +165,13 @@ $max-width: $x-large !default;
    Grid
    ========================================================================== */
 
-$right-sidebar-width-narrow: 200px !default;
-$right-sidebar-width: 300px !default;
-$right-sidebar-width-wide: 400px !default;
+$sidebar-width-narrow: 240px !default;
+$sidebar-width: $sidebar-width-narrow !default;
+$sidebar-width-wide: $sidebar-width-narrow !default;
+
+$teaser-height: 200px;
+$figure-height: 100px;
+$archive-item-height: calc($teaser-height + $figure-height);
 
 /*
    Other
