@@ -1,0 +1,1076 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>자바 로또 프로젝트 :: Today I Learned</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="김동주">
+  
+  <meta property="article:author" content="김동주">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Today I Learned">
+<meta property="og:title" content="자바 로또 프로젝트">
+<meta property="og:url" content="https://hepheir.github.io/note/java%20&%20spring%20&%20algorithm/java-lotto-implementation">
+
+
+  <meta property="og:description" content="">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-04-17T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://hepheir.github.io/note/java%20&%20spring%20&%20algorithm/java-lotto-implementation">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "김동주",
+      "url": "https://hepheir.github.io/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="VqXMmWjovzbftQ3Cr6qVWv-8yGU7XPuBr0ptMcdncUA" />
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Today I Learned Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Today I Learned
+          <span class="site-subtitle">기록으로 남기는 공부 블로그</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/" title="Home">
+                
+                  <i class="fas fa-home" aria-hidden="true"></i>
+                
+              </a>
+            </li><li class="masthead__menu-item">
+              <a href="https://github.com/hepheir/hepheir.github.io" title="Git Repository">
+                
+                  <i class="fas fa-code-branch" aria-hidden="true"></i>
+                
+              </a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/" title="Categories">
+                
+                  <i class="fas fa-bookmark" aria-hidden="true"></i>
+                
+              </a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">홈</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/note" itemprop="item"><span itemprop="name">Note</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/java-&-spring-&-algorithm" itemprop="item"><span itemprop="name">Java & spring & algorithm</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">자바 로또 프로젝트</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://hepheir.github.io/">
+        <img src="https://avatars.githubusercontent.com/u/19310326" alt="김동주" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://hepheir.github.io/" itemprop="url">
+        김동주
+        <span title="작성한 포스트 수" style="font-size: 0.75em;">
+          (Lv.26)
+        </span>
+      </a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p> 📖  지식변태  📖</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">In your 🖤</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:hepheir@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">hepheir@gmail.com</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/Hepheir" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">Hepheir</span></a></li>
+          
+        
+          
+            <li><a href="https://www.instagram.com/hepxheir/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">hepxheir</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+
+  <p>
+    <img style="width: auto;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FHepheir&count_bg=%23DA85FD&title_bg=%233D3D3D&icon=&icon_color=%23E7E7E7&title=%E2%98%86+hits&edge_flat=true"/>
+  </p>
+
+  
+
+<nav class="nav__list">
+  <h3 class="nav__title" style="padding-left: 0;">
+    카테고리
+    <label for="ac-categories">펼치기/접기</label>
+  </h3>
+  <input id="ac-categories" name="accordion-categories" type="checkbox" />
+  <ul class="nav__items">
+    <li>
+      <ul style="padding: 0 8px;">
+        
+          
+            <li>
+              <a href="/categories/algorithm/" style="font-weight: bold;">
+                Algorithm
+                <span class="category-post-count" style="opacity: 0.33;">
+                  (13)
+                </span>
+              </a>
+            </li>
+
+            
+              <ul style="padding: 0 8px;">
+                
+                  
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/baekjoon-online-judge/">
+                        BAEKJOON Online Judge
+                        <span class="category-post-count" style="opacity: 0.33;">(10)</span>
+                      </a>
+                    </li>
+                  
+                
+              </ul>
+            
+
+            <hr>
+          
+        
+          
+            <li>
+              <a href="/categories/note/" style="font-weight: bold;">
+                Note
+                <span class="category-post-count" style="opacity: 0.33;">
+                  (1)
+                </span>
+              </a>
+            </li>
+
+            
+              <ul style="padding: 0 8px;">
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/java-spring-algorithm/">
+                        Java & Spring & Algorithm
+                        <span class="category-post-count" style="opacity: 0.33;">(1)</span>
+                      </a>
+                    </li>
+                  
+                
+              </ul>
+            
+
+            <hr>
+          
+        
+          
+            <li>
+              <a href="/categories/research/" style="font-weight: bold;">
+                Research
+                <span class="category-post-count" style="opacity: 0.33;">
+                  (4)
+                </span>
+              </a>
+            </li>
+
+            
+              <ul style="padding: 0 8px;">
+                
+                  
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/others/">
+                        Others
+                        <span class="category-post-count" style="opacity: 0.33;">(4)</span>
+                      </a>
+                    </li>
+                  
+                
+              </ul>
+            
+
+            <hr>
+          
+        
+          
+            <li>
+              <a href="/categories/side-project/" style="font-weight: bold;">
+                Side Project
+                <span class="category-post-count" style="opacity: 0.33;">
+                  (8)
+                </span>
+              </a>
+            </li>
+
+            
+              <ul style="padding: 0 8px;">
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/github-blog/">
+                        GitHub Blog
+                        <span class="category-post-count" style="opacity: 0.33;">(5)</span>
+                      </a>
+                    </li>
+                  
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/jekyll-n-hyde/">
+                        Jekyll n Hyde
+                        <span class="category-post-count" style="opacity: 0.33;">(2)</span>
+                      </a>
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+
+            <hr>
+          
+        
+      </ul>
+    </li>
+  </ul>
+</nav>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="자바 로또 프로젝트">
+    <meta itemprop="description" content="  ">
+    <meta itemprop="datePublished" content="2022-04-17T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://hepheir.github.io/note/java%20&%20spring%20&%20algorithm/java-lotto-implementation" class="u-url" itemprop="url">
+    <span class="prefix">[Java & Spring & Algorithm]</span>
+
+
+    <span>자바 로또 프로젝트
+</span>
+
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-17T00:00:00+09:00">April 17, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#srp-지키기">SRP 지키기</a><ul><li><a href="#책임을-나눈다는-것">책임을 나눈다는 것</a></li></ul></li><li><a href="#interfacejava를-이용한-프로그래밍">Interface(Java)를 이용한 프로그래밍</a><ul><li><a href="#인터페이스에서는-구현을-생략한다고요">인터페이스에서는 구현을 생략한다고요?</a></li></ul></li><li><a href="#interface와-srp를-활용해봅시다">Interface와 SRP를 활용해봅시다</a><ul><li><a href="#복권을-생성하는-과정에서의-책임-분배에-대하여">복권을 생성하는 과정에서의 책임 분배에 대하여</a></li><li><a href="#왜-이렇게-책임이-분배되어있나요">왜 이렇게 책임이 분배되어있나요</a></li><li><a href="#그럼-숫자의-보장은-어디서">그럼 숫자의 보장은 어디서?</a></li><li><a href="#숫자를-공급받는-방법에-대하여">숫자를 공급받는 방법에 대하여</a></li></ul></li><li><a href="#마무리">마무리</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <div style="padding: 32px; box-sizing: border-box;">
+  <p><a href="https://github.com/kth496/java-lotto-implementation/pull/2">
+<img src="https://opengraph.githubassets.com/a5796a3cbd3d1f7959da21e876bfc7dce367565143624ab8d439ea259711e46c/kth496/java-lotto-implementation/pull/2" />
+</a></p>
+</div>
+
+<p>이번 구현 과제에서는 두 가지 요소에 집중했습니다.</p>
+
+<ol>
+  <li><a href="https://ko.wikipedia.org/wiki/단일_책임_원칙">SRP</a> 지키기</li>
+  <li><a href="http://www.tcpschool.com/java/java_polymorphism_interface">Interface(Java)</a>를 이용한 프로그래밍</li>
+</ol>
+
+<h2 id="srp-지키기">SRP 지키기</h2>
+
+<p>SRP(Single Responsibility Princible, 단일 책임 원칙)이란, 객체 지향 프로그래밍에서 모든 클래스는 하나의 책임만 갖고, 클래스가 제공하는 모든 기능은 이 책임과 관련이 있어야 함을 일컫는 것입니다.</p>
+
+<p>지금까지 구현 과제들을 수행해오면서, SRP를 모른 채로 프로그램의 의존성 구조를 설계해보고, 각 클래스 별로 책임을 분배하는 과정에서, 각 클래스별로 책임을 적게 주는 것이 좋은 것임을 몸소 깨우쳤던 것 같습니다.</p>
+
+<p>최근에 이를 SRP라고 일컫는다는 것을 알게되었고, 이번 과제를 구현하면서 SRP를 지켜보자고 다짐을 해보았습니다.</p>
+
+<h3 id="책임을-나눈다는-것">책임을 나눈다는 것</h3>
+
+<p>SRP를 고려하지 않는다면, 자칫 아래와 같이 하나의 클래스에 여러 개의 책임을 지우게 되는 실수를 할 수 있습니다.</p>
+
+<div style="padding: 32px; box-sizing: border-box;">
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" viewBox="-0.5 -0.5 891 92" style="max-height: 500px;"><defs><filter id="dropShadow"><feGaussianBlur in="SourceAlpha" stdDeviation="1.7" result="blur" /><feOffset in="blur" dx="3" dy="3" result="offsetBlur" /><feFlood flood-color="#3D4574" flood-opacity="0.4" result="offsetColor" /><feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur" /><feBlend in="SourceGraphic" in2="offsetBlur" /></filter></defs><g filter="url(#dropShadow)"><path d="M 481 41 L 628.26 41" fill="none" stroke="none" pointer-events="stroke" transform="translate(2,3)" opacity="0.25" /><path d="M 481 41 L 628.26 41" fill="none" stroke="none" pointer-events="stroke" /><path d="M 638.76 41 L 624.76 48 L 628.26 41 L 624.76 34 Z" fill="none" stroke="none" pointer-events="all" /><path d="M 481 41 M 481 41 C 536.04 41.73 592.23 41.23 628.26 41 M 481 41 C 520.91 38.84 561.21 39.43 628.26 41" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke" transform="translate(2,3)" opacity="0.25" /><path d="M 481 41 M 481 41 C 536.04 41.73 592.23 41.23 628.26 41 M 481 41 C 520.91 38.84 561.21 39.43 628.26 41" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke" /><path d="M 625.05 33.66 C 625.05 33.66 625.05 33.66 625.05 33.66 M 625.05 33.66 C 625.05 33.66 625.05 33.66 625.05 33.66 M 629.12 41.17 C 629.54 40.31 630.87 39.79 632.4 37.4 M 629.12 41.17 C 629.8 40.06 630.94 39.22 632.4 37.4" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><path d="M 638.76 41 M 638.76 41 C 635.24 42.16 633.13 44.54 624.76 48 M 638.76 41 C 635.09 42.18 631.76 44.59 624.76 48 M 624.76 48 C 625.46 46.54 626.43 44.6 628.26 41 M 624.76 48 C 626 46.28 626.74 44.52 628.26 41 M 628.26 41 C 627.24 39.72 626.44 37.99 624.76 34 M 628.26 41 C 627 38.35 625.4 35.88 624.76 34 M 624.76 34 C 627.61 36.3 630.77 38.05 638.76 41 M 624.76 34 C 627.91 35.24 630.78 36.46 638.76 41" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><rect x="1" y="1" width="480" height="80" fill="none" stroke="none" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><rect x="1" y="1" width="480" height="80" fill="none" stroke="none" pointer-events="all" /><path d="M 2.15 -0.9 L 482.18 1.72 L 482.97 82.4 L 0.76 80.33" fill="#000000" stroke="none" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><path d="M 2.15 -0.9 L 482.18 1.72 L 482.97 82.4 L 0.76 80.33" fill="rgb(255, 255, 255)" stroke="none" pointer-events="all" /><path d="M 1 1 C 127.39 0.56 253.85 0.59 481 1 M 1 1 C 163.12 -0.33 325.14 -0.41 481 1 M 481 1 C 481.06 24.19 479.07 49.01 481 81 M 481 1 C 481.59 28.73 480.73 55.02 481 81 M 481 81 C 366.19 80.71 250.47 80.73 1 81 M 481 81 C 377.14 79.03 274.41 78.7 1 81 M 1 81 C 1.55 53.96 1.1 26.89 1 1 M 1 81 C 1.4 62.14 0.15 42.34 1 1" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><path d="M 1 1 C 127.39 0.56 253.85 0.59 481 1 M 1 1 C 163.12 -0.33 325.14 -0.41 481 1 M 481 1 C 481.06 24.19 479.07 49.01 481 81 M 481 1 C 481.59 28.73 480.73 55.02 481 81 M 481 81 C 366.19 80.71 250.47 80.73 1 81 M 481 81 C 377.14 79.03 274.41 78.7 1 81 M 1 81 C 1.55 53.96 1.1 26.89 1 1 M 1 81 C 1.4 62.14 0.15 42.34 1 1" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 478px; height: 1px; padding-top: 41px; margin-left: 2px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">6개 이하의 1~45 범위 숫자들로 이루어짐을 보장하는 책임</div></div></div></foreignObject><text x="241" y="46" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="18px" text-anchor="middle">6개 이하의 1~45 범위 숫자들로 이루어짐을 보장하는 책임</text></switch></g><rect x="641" y="1" width="240" height="80" fill="none" stroke="none" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><rect x="641" y="1" width="240" height="80" fill="none" stroke="none" pointer-events="all" /><path d="M 640.25 0.02 L 882.63 0.57 L 882.27 80.51 L 639.12 80.27" fill="#000000" stroke="none" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><path d="M 640.25 0.02 L 882.63 0.57 L 882.27 80.51 L 639.12 80.27" fill="rgb(255, 255, 255)" stroke="none" pointer-events="all" /><path d="M 641 1 C 703.47 -1.63 765.96 -0.92 881 1 M 641 1 C 694.3 -0.53 748.67 -1.63 881 1 M 881 1 C 880.42 20.12 881.87 38.85 881 81 M 881 1 C 881.07 19.89 881.8 39.4 881 81 M 881 81 C 814.03 82.64 743.92 81.01 641 81 M 881 81 C 790.07 81.08 698.9 80.08 641 81 M 641 81 C 638.51 56.86 640.19 31.99 641 1 M 641 81 C 642.23 61.32 641.65 40.4 641 1" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><path d="M 641 1 C 703.47 -1.63 765.96 -0.92 881 1 M 641 1 C 694.3 -0.53 748.67 -1.63 881 1 M 881 1 C 880.42 20.12 881.87 38.85 881 81 M 881 1 C 881.07 19.89 881.8 39.4 881 81 M 881 81 C 814.03 82.64 743.92 81.01 641 81 M 881 81 C 790.07 81.08 698.9 80.08 641 81 M 641 81 C 638.51 56.86 640.19 31.99 641 1 M 641 81 C 642.23 61.32 641.65 40.4 641 1" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 238px; height: 1px; padding-top: 41px; margin-left: 642px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Verdana; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">LotteryTicket</div></div></div></foreignObject><text x="761" y="46" fill="rgb(0, 0, 0)" font-family="Verdana" font-size="18px" text-anchor="middle">LotteryTicket</text></switch></g></g><switch><g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" /><a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank"><text text-anchor="middle" font-size="10px" x="50%" y="100%">Text is not SVG - cannot display</text></a></switch></svg>
+</div>
+
+<p>예시 속의 두 책임은 얼핏 보면 “6개 이하의 1~45 범위 숫자들로 이루어짐을 보장하는 책임”으로 단일 책임 같아 보일 수도 있습니다. 하지만, 충분히 다음과 같이 좀 더 세분화 할 수 있죠.</p>
+
+<div style="padding: 32px; box-sizing: border-box;">
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" viewBox="-0.5 -0.5 851 252" style="max-height: 500px;"><defs><filter id="dropShadow"><feGaussianBlur in="SourceAlpha" stdDeviation="1.7" result="blur" /><feOffset in="blur" dx="3" dy="3" result="offsetBlur" /><feFlood flood-color="#3D4574" flood-opacity="0.4" result="offsetColor" /><feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur" /><feBlend in="SourceGraphic" in2="offsetBlur" /></filter></defs><g filter="url(#dropShadow)"><path d="M 401 201 L 590.57 68.3" fill="none" stroke="none" pointer-events="stroke" transform="translate(2,3)" opacity="0.25" /><path d="M 401 201 L 590.57 68.3" fill="none" stroke="none" pointer-events="stroke" /><path d="M 599.17 62.28 L 591.71 76.05 L 590.57 68.3 L 583.68 64.58 Z" fill="none" stroke="none" pointer-events="all" /><path d="M 401 201 M 401 201 C 470.24 152.35 541.08 102.47 590.57 68.3 M 401 201 C 464.71 155.6 531.47 109.79 590.57 68.3" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke" transform="translate(2,3)" opacity="0.25" /><path d="M 401 201 M 401 201 C 470.24 152.35 541.08 102.47 590.57 68.3 M 401 201 C 464.71 155.6 531.47 109.79 590.57 68.3" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke" /><path d="M 583.84 64.4 C 583.84 64.4 583.84 64.4 583.84 64.4 M 583.84 64.4 C 583.84 64.4 583.84 64.4 583.84 64.4 M 590.53 68.9 C 591.28 68.19 593.13 66.62 595.78 62.86 M 590.53 68.9 C 591.95 67.94 592.41 66.65 595.78 62.86" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><path d="M 599.17 62.28 M 599.17 62.28 C 597.01 65.26 595.21 66.82 591.71 76.05 M 599.17 62.28 C 597.85 65.74 594.97 69.41 591.71 76.05 M 591.71 76.05 C 590.64 73.33 590.57 70.84 590.57 68.3 M 591.71 76.05 C 591.2 74.44 590.87 72.8 590.57 68.3 M 590.57 68.3 C 588.92 66.67 585.54 66.13 583.68 64.58 M 590.57 68.3 C 588.3 67.12 586.92 66.62 583.68 64.58 M 583.68 64.58 C 589.37 63.03 595.04 64.43 599.17 62.28 M 583.68 64.58 C 589.13 63.56 595.66 62.56 599.17 62.28" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><rect x="1" y="161" width="400" height="80" fill="none" stroke="none" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><rect x="1" y="161" width="400" height="80" fill="none" stroke="none" pointer-events="all" /><path d="M 0.62 160.87 L 402.06 160.01 L 401.15 239.88 L 1.16 242.35" fill="#000000" stroke="none" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><path d="M 0.62 160.87 L 402.06 160.01 L 401.15 239.88 L 1.16 242.35" fill="rgb(255, 255, 255)" stroke="none" pointer-events="all" /><path d="M 1 161 C 106.89 159.2 212.88 159.12 401 161 M 1 161 C 106.67 160.77 213.12 161.1 401 161 M 401 161 C 402.02 183.2 401.17 202.55 401 241 M 401 161 C 400.23 190.94 400.47 219.42 401 241 M 401 241 C 290.34 239.65 179.28 241.09 1 241 M 401 241 C 251.07 242.83 101.59 243.03 1 241 M 1 241 C 2.51 225.24 1.53 207.61 1 161 M 1 241 C 1.49 218.34 2.08 194.83 1 161" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><path d="M 1 161 C 106.89 159.2 212.88 159.12 401 161 M 1 161 C 106.67 160.77 213.12 161.1 401 161 M 401 161 C 402.02 183.2 401.17 202.55 401 241 M 401 161 C 400.23 190.94 400.47 219.42 401 241 M 401 241 C 290.34 239.65 179.28 241.09 1 241 M 401 241 C 251.07 242.83 101.59 243.03 1 241 M 1 241 C 2.51 225.24 1.53 207.61 1 161 M 1 241 C 1.49 218.34 2.08 194.83 1 161" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 398px; height: 1px; padding-top: 201px; margin-left: 2px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">1~45 범위의 숫자임을 보장하는 책임</div></div></div></foreignObject><text x="201" y="206" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="18px" text-anchor="middle">1~45 범위의 숫자임을 보장하는 책임</text></switch></g><path d="M 401 41 L 588.26 41" fill="none" stroke="none" pointer-events="stroke" transform="translate(2,3)" opacity="0.25" /><path d="M 401 41 L 588.26 41" fill="none" stroke="none" pointer-events="stroke" /><path d="M 598.76 41 L 584.76 48 L 588.26 41 L 584.76 34 Z" fill="none" stroke="none" pointer-events="all" /><path d="M 401 41 M 401 41 C 471 41.68 542.15 41.18 588.26 41 M 401 41 C 451.79 38.45 502.97 39.04 588.26 41" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke" transform="translate(2,3)" opacity="0.25" /><path d="M 401 41 M 401 41 C 471 41.68 542.15 41.18 588.26 41 M 401 41 C 451.79 38.45 502.97 39.04 588.26 41" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke" /><path d="M 585.05 33.66 C 585.05 33.66 585.05 33.66 585.05 33.66 M 585.05 33.66 C 585.05 33.66 585.05 33.66 585.05 33.66 M 589.12 41.17 C 589.54 40.31 590.87 39.79 592.4 37.4 M 589.12 41.17 C 589.8 40.06 590.94 39.22 592.4 37.4" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><path d="M 598.76 41 M 598.76 41 C 595.24 42.16 593.13 44.54 584.76 48 M 598.76 41 C 595.09 42.18 591.76 44.59 584.76 48 M 584.76 48 C 585.46 46.54 586.43 44.6 588.26 41 M 584.76 48 C 586 46.28 586.74 44.52 588.26 41 M 588.26 41 C 587.24 39.72 586.44 37.99 584.76 34 M 588.26 41 C 587 38.35 585.4 35.88 584.76 34 M 584.76 34 C 587.61 36.3 590.77 38.05 598.76 41 M 584.76 34 C 587.91 35.24 590.78 36.46 598.76 41" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><rect x="1" y="1" width="400" height="80" fill="none" stroke="none" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><rect x="1" y="1" width="400" height="80" fill="none" stroke="none" pointer-events="all" /><path d="M 2.15 -0.9 L 402.18 1.72 L 402.97 82.4 L 0.76 80.33" fill="#000000" stroke="none" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><path d="M 2.15 -0.9 L 402.18 1.72 L 402.97 82.4 L 0.76 80.33" fill="rgb(255, 255, 255)" stroke="none" pointer-events="all" /><path d="M 1 1 C 106.24 0.42 211.57 0.45 401 1 M 1 1 C 136.15 -0.48 271.16 -0.59 401 1 M 401 1 C 401.06 24.19 399.07 49.01 401 81 M 401 1 C 401.59 28.73 400.73 55.02 401 81 M 401 81 C 305.39 80.7 208.58 80.72 1 81 M 401 81 C 314.28 78.83 229.01 78.4 1 81 M 1 81 C 1.55 53.96 1.1 26.89 1 1 M 1 81 C 1.4 62.14 0.15 42.34 1 1" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><path d="M 1 1 C 106.24 0.42 211.57 0.45 401 1 M 1 1 C 136.15 -0.48 271.16 -0.59 401 1 M 401 1 C 401.06 24.19 399.07 49.01 401 81 M 401 1 C 401.59 28.73 400.73 55.02 401 81 M 401 81 C 305.39 80.7 208.58 80.72 1 81 M 401 81 C 314.28 78.83 229.01 78.4 1 81 M 1 81 C 1.55 53.96 1.1 26.89 1 1 M 1 81 C 1.4 62.14 0.15 42.34 1 1" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 398px; height: 1px; padding-top: 41px; margin-left: 2px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">6개 이하의 숫자들로 이루어짐을 보장하는 책임</div></div></div></foreignObject><text x="201" y="46" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="18px" text-anchor="middle">6개 이하의 숫자들로 이루어짐을 보장하는 책임</text></switch></g><rect x="601" y="1" width="240" height="80" fill="none" stroke="none" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><rect x="601" y="1" width="240" height="80" fill="none" stroke="none" pointer-events="all" /><path d="M 600.25 0.02 L 842.63 0.57 L 842.27 80.51 L 599.12 80.27" fill="#000000" stroke="none" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><path d="M 600.25 0.02 L 842.63 0.57 L 842.27 80.51 L 599.12 80.27" fill="rgb(255, 255, 255)" stroke="none" pointer-events="all" /><path d="M 601 1 C 663.47 -1.63 725.96 -0.92 841 1 M 601 1 C 654.3 -0.53 708.67 -1.63 841 1 M 841 1 C 840.42 20.12 841.87 38.85 841 81 M 841 1 C 841.07 19.89 841.8 39.4 841 81 M 841 81 C 774.03 82.64 703.92 81.01 601 81 M 841 81 C 750.07 81.08 658.9 80.08 601 81 M 601 81 C 598.51 56.86 600.19 31.99 601 1 M 601 81 C 602.23 61.32 601.65 40.4 601 1" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><path d="M 601 1 C 663.47 -1.63 725.96 -0.92 841 1 M 601 1 C 654.3 -0.53 708.67 -1.63 841 1 M 841 1 C 840.42 20.12 841.87 38.85 841 81 M 841 1 C 841.07 19.89 841.8 39.4 841 81 M 841 81 C 774.03 82.64 703.92 81.01 601 81 M 841 81 C 750.07 81.08 658.9 80.08 601 81 M 601 81 C 598.51 56.86 600.19 31.99 601 1 M 601 81 C 602.23 61.32 601.65 40.4 601 1" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 238px; height: 1px; padding-top: 41px; margin-left: 602px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Verdana; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">LotteryTicket</div></div></div></foreignObject><text x="721" y="46" fill="rgb(0, 0, 0)" font-family="Verdana" font-size="18px" text-anchor="middle">LotteryTicket</text></switch></g></g><switch><g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" /><a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank"><text text-anchor="middle" font-size="10px" x="50%" y="100%">Text is not SVG - cannot display</text></a></switch></svg>
+</div>
+
+<p>이 때, <code class="language-plaintext highlighter-rouge">LotteryTicket</code>은 두 개의 책임을 지고 있는 것이 되므로, 이는 SRP에 위배됩니다. 이 때는, 아래와 같이 별도의 클래스를 설계하여 책임을 전가하는 것으로 개선할 수 있겠네요.</p>
+
+<div style="padding: 32px; box-sizing: border-box;">
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" viewBox="-0.5 -0.5 851 252" style="max-height: 500px;"><defs><filter id="dropShadow"><feGaussianBlur in="SourceAlpha" stdDeviation="1.7" result="blur" /><feOffset in="blur" dx="3" dy="3" result="offsetBlur" /><feFlood flood-color="#3D4574" flood-opacity="0.4" result="offsetColor" /><feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur" /><feBlend in="SourceGraphic" in2="offsetBlur" /></filter></defs><g filter="url(#dropShadow)"><path d="M 401 201 L 588.26 201" fill="none" stroke="none" pointer-events="stroke" transform="translate(2,3)" opacity="0.25" /><path d="M 401 201 L 588.26 201" fill="none" stroke="none" pointer-events="stroke" /><path d="M 598.76 201 L 584.76 208 L 588.26 201 L 584.76 194 Z" fill="none" stroke="none" pointer-events="all" /><path d="M 401 201 M 401 201 C 469.86 202.14 539.83 201.84 588.26 201 M 401 201 C 464.46 201.28 530.71 201.09 588.26 201" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke" transform="translate(2,3)" opacity="0.25" /><path d="M 401 201 M 401 201 C 469.86 202.14 539.83 201.84 588.26 201 M 401 201 C 464.46 201.28 530.71 201.09 588.26 201" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke" /><path d="M 584.89 193.85 C 584.89 193.85 584.89 193.85 584.89 193.85 M 584.89 193.85 C 584.89 193.85 584.89 193.85 584.89 193.85 M 588.96 201.36 C 589.43 200.92 590.59 199.94 592.24 197.59 M 588.96 201.36 C 589.85 200.76 590.14 199.96 592.24 197.59" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><path d="M 598.76 201 M 598.76 201 C 595.3 202.52 592.14 202.68 584.76 208 M 598.76 201 C 595.58 202.61 590.91 204.43 584.76 208 M 584.76 208 C 585.42 205.61 587.08 203.39 588.26 201 M 584.76 208 C 585.23 206.58 585.87 205.1 588.26 201 M 588.26 201 C 587.7 198.34 585.39 196.77 584.76 194 M 588.26 201 C 586.92 198.92 586.48 197.51 584.76 194 M 584.76 194 C 589.99 195.45 595.17 199.84 598.76 201 M 584.76 194 C 589.7 196.62 595.65 199.26 598.76 201" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><rect x="1" y="161" width="400" height="80" fill="none" stroke="none" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><rect x="1" y="161" width="400" height="80" fill="none" stroke="none" pointer-events="all" /><path d="M 0.62 160.87 L 402.06 160.01 L 401.15 239.88 L 1.16 242.35" fill="#000000" stroke="none" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><path d="M 0.62 160.87 L 402.06 160.01 L 401.15 239.88 L 1.16 242.35" fill="rgb(255, 255, 255)" stroke="none" pointer-events="all" /><path d="M 1 161 C 106.89 159.2 212.88 159.12 401 161 M 1 161 C 106.67 160.77 213.12 161.1 401 161 M 401 161 C 402.02 183.2 401.17 202.55 401 241 M 401 161 C 400.23 190.94 400.47 219.42 401 241 M 401 241 C 290.34 239.65 179.28 241.09 1 241 M 401 241 C 251.07 242.83 101.59 243.03 1 241 M 1 241 C 2.51 225.24 1.53 207.61 1 161 M 1 241 C 1.49 218.34 2.08 194.83 1 161" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><path d="M 1 161 C 106.89 159.2 212.88 159.12 401 161 M 1 161 C 106.67 160.77 213.12 161.1 401 161 M 401 161 C 402.02 183.2 401.17 202.55 401 241 M 401 161 C 400.23 190.94 400.47 219.42 401 241 M 401 241 C 290.34 239.65 179.28 241.09 1 241 M 401 241 C 251.07 242.83 101.59 243.03 1 241 M 1 241 C 2.51 225.24 1.53 207.61 1 161 M 1 241 C 1.49 218.34 2.08 194.83 1 161" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 398px; height: 1px; padding-top: 201px; margin-left: 2px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">1~45 범위의 숫자임을 보장하는 책임</div></div></div></foreignObject><text x="201" y="206" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="18px" text-anchor="middle">1~45 범위의 숫자임을 보장하는 책임</text></switch></g><path d="M 401 41 L 588.26 41" fill="none" stroke="none" pointer-events="stroke" transform="translate(2,3)" opacity="0.25" /><path d="M 401 41 L 588.26 41" fill="none" stroke="none" pointer-events="stroke" /><path d="M 598.76 41 L 584.76 48 L 588.26 41 L 584.76 34 Z" fill="none" stroke="none" pointer-events="all" /><path d="M 401 41 M 401 41 C 471 41.68 542.15 41.18 588.26 41 M 401 41 C 451.79 38.45 502.97 39.04 588.26 41" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke" transform="translate(2,3)" opacity="0.25" /><path d="M 401 41 M 401 41 C 471 41.68 542.15 41.18 588.26 41 M 401 41 C 451.79 38.45 502.97 39.04 588.26 41" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke" /><path d="M 585.05 33.66 C 585.05 33.66 585.05 33.66 585.05 33.66 M 585.05 33.66 C 585.05 33.66 585.05 33.66 585.05 33.66 M 589.12 41.17 C 589.54 40.31 590.87 39.79 592.4 37.4 M 589.12 41.17 C 589.8 40.06 590.94 39.22 592.4 37.4" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><path d="M 598.76 41 M 598.76 41 C 595.24 42.16 593.13 44.54 584.76 48 M 598.76 41 C 595.09 42.18 591.76 44.59 584.76 48 M 584.76 48 C 585.46 46.54 586.43 44.6 588.26 41 M 584.76 48 C 586 46.28 586.74 44.52 588.26 41 M 588.26 41 C 587.24 39.72 586.44 37.99 584.76 34 M 588.26 41 C 587 38.35 585.4 35.88 584.76 34 M 584.76 34 C 587.61 36.3 590.77 38.05 598.76 41 M 584.76 34 C 587.91 35.24 590.78 36.46 598.76 41" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><rect x="1" y="1" width="400" height="80" fill="none" stroke="none" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><rect x="1" y="1" width="400" height="80" fill="none" stroke="none" pointer-events="all" /><path d="M 2.15 -0.9 L 402.18 1.72 L 402.97 82.4 L 0.76 80.33" fill="#000000" stroke="none" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><path d="M 2.15 -0.9 L 402.18 1.72 L 402.97 82.4 L 0.76 80.33" fill="rgb(255, 255, 255)" stroke="none" pointer-events="all" /><path d="M 1 1 C 106.24 0.42 211.57 0.45 401 1 M 1 1 C 136.15 -0.48 271.16 -0.59 401 1 M 401 1 C 401.06 24.19 399.07 49.01 401 81 M 401 1 C 401.59 28.73 400.73 55.02 401 81 M 401 81 C 305.39 80.7 208.58 80.72 1 81 M 401 81 C 314.28 78.83 229.01 78.4 1 81 M 1 81 C 1.55 53.96 1.1 26.89 1 1 M 1 81 C 1.4 62.14 0.15 42.34 1 1" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><path d="M 1 1 C 106.24 0.42 211.57 0.45 401 1 M 1 1 C 136.15 -0.48 271.16 -0.59 401 1 M 401 1 C 401.06 24.19 399.07 49.01 401 81 M 401 1 C 401.59 28.73 400.73 55.02 401 81 M 401 81 C 305.39 80.7 208.58 80.72 1 81 M 401 81 C 314.28 78.83 229.01 78.4 1 81 M 1 81 C 1.55 53.96 1.1 26.89 1 1 M 1 81 C 1.4 62.14 0.15 42.34 1 1" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 398px; height: 1px; padding-top: 41px; margin-left: 2px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">6개 이하의 숫자들로 이루어짐을 보장하는 책임</div></div></div></foreignObject><text x="201" y="46" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="18px" text-anchor="middle">6개 이하의 숫자들로 이루어짐을 보장하는 책임</text></switch></g><rect x="601" y="1" width="240" height="80" fill="none" stroke="none" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><rect x="601" y="1" width="240" height="80" fill="none" stroke="none" pointer-events="all" /><path d="M 600.25 0.02 L 842.63 0.57 L 842.27 80.51 L 599.12 80.27" fill="#000000" stroke="none" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><path d="M 600.25 0.02 L 842.63 0.57 L 842.27 80.51 L 599.12 80.27" fill="rgb(255, 255, 255)" stroke="none" pointer-events="all" /><path d="M 601 1 C 663.47 -1.63 725.96 -0.92 841 1 M 601 1 C 654.3 -0.53 708.67 -1.63 841 1 M 841 1 C 840.42 20.12 841.87 38.85 841 81 M 841 1 C 841.07 19.89 841.8 39.4 841 81 M 841 81 C 774.03 82.64 703.92 81.01 601 81 M 841 81 C 750.07 81.08 658.9 80.08 601 81 M 601 81 C 598.51 56.86 600.19 31.99 601 1 M 601 81 C 602.23 61.32 601.65 40.4 601 1" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><path d="M 601 1 C 663.47 -1.63 725.96 -0.92 841 1 M 601 1 C 654.3 -0.53 708.67 -1.63 841 1 M 841 1 C 840.42 20.12 841.87 38.85 841 81 M 841 1 C 841.07 19.89 841.8 39.4 841 81 M 841 81 C 774.03 82.64 703.92 81.01 601 81 M 841 81 C 750.07 81.08 658.9 80.08 601 81 M 601 81 C 598.51 56.86 600.19 31.99 601 1 M 601 81 C 602.23 61.32 601.65 40.4 601 1" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 238px; height: 1px; padding-top: 41px; margin-left: 602px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Verdana; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">LotteryTicket</div></div></div></foreignObject><text x="721" y="46" fill="rgb(0, 0, 0)" font-family="Verdana" font-size="18px" text-anchor="middle">LotteryTicket</text></switch></g><rect x="601" y="161" width="240" height="80" fill="none" stroke="none" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><rect x="601" y="161" width="240" height="80" fill="none" stroke="none" pointer-events="all" /><path d="M 602.85 162.04 L 840.47 160.01 L 841.72 241.75 L 601.12 242.52" fill="#000000" stroke="none" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><path d="M 602.85 162.04 L 840.47 160.01 L 841.72 241.75 L 601.12 242.52" fill="rgb(255, 255, 255)" stroke="none" pointer-events="all" /><path d="M 601 161 C 692.16 158.98 780.89 158.9 841 161 M 601 161 C 653.04 160.4 704.38 161.25 841 161 M 841 161 C 839.63 182.9 839.98 203.16 841 241 M 841 161 C 840.72 192.51 839.97 223.2 841 241 M 841 241 C 751.35 240.84 664.11 240.7 601 241 M 841 241 C 765.42 241.3 689.8 241.94 601 241 M 601 241 C 601.06 216.32 598.51 190.01 601 161 M 601 241 C 601.74 212.07 601.67 182.95 601 161" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" transform="translate(2,3)" opacity="0.25" /><path d="M 601 161 C 692.16 158.98 780.89 158.9 841 161 M 601 161 C 653.04 160.4 704.38 161.25 841 161 M 841 161 C 839.63 182.9 839.98 203.16 841 241 M 841 161 C 840.72 192.51 839.97 223.2 841 241 M 841 241 C 751.35 240.84 664.11 240.7 601 241 M 841 241 C 765.42 241.3 689.8 241.94 601 241 M 601 241 C 601.06 216.32 598.51 190.01 601 161 M 601 241 C 601.74 212.07 601.67 182.95 601 161" fill="none" stroke="rgb(0, 0, 0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all" /><g transform="translate(-0.5 -0.5)"><switch><foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 238px; height: 1px; padding-top: 201px; margin-left: 602px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Verdana; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">LotteryNumber</div></div></div></foreignObject><text x="721" y="206" fill="rgb(0, 0, 0)" font-family="Verdana" font-size="18px" text-anchor="middle">LotteryNumber</text></switch></g></g><switch><g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" /><a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank"><text text-anchor="middle" font-size="10px" x="50%" y="100%">Text is not SVG - cannot display</text></a></switch></svg>
+</div>
+
+<p>앞으로는 어떠한 책임 단위를 나눌 때, “<strong>혹시 더 세부적인 책임으로 쪼개질 여지가 있는지</strong>“를 면밀히 검토해봐야 할 것 같습니다.</p>
+
+<h2 id="interfacejava를-이용한-프로그래밍">Interface(Java)를 이용한 프로그래밍</h2>
+
+<p>인터페이스는 구현을 하지 않은채로 사용하는 자료형입니다. 설계 단계에서는 인터페이스에 변경사항이 생겨도, 메소드의 추가・제거, 시그니쳐의 변경정도만 하면 되므로 수정에 많은 시간이 소요되지 않는다는 것이 장점입니다.</p>
+
+<p>이전까지의 구현 과제들은 전체적인 구조가 잡힐 때 까지 대략 3~5일이 걸리곤 했는데, 시간이 많이 걸렸던 이유는 여러 클래스들에 대해 “설계 → 구현 → 적용 → 수정”의 복잡한 절차를 거쳐가야했기 때문입니다.</p>
+
+<p>특히, 구현과 적용에 있어, 변경 사항의 전파를 따라 수정사항을 차례로 적용하는 것과, 이에 따라오는 디버깅 과정이 상당히 많은 시간을 필요로했죠.</p>
+
+<p>인터페이스만 작성하여 전체적인 구조를 먼저 잡는 방법을 택하면서, 지난 과제들에 비해 코드 수정이 적어졌다는 것을 확실하게 체감할 수 있었고, 구조 또한 만족스러운 형태로 잡혔다는 느낌이 들었습니다.</p>
+
+<h3 id="인터페이스에서는-구현을-생략한다고요">인터페이스에서는 구현을 생략한다고요?</h3>
+
+<p>인터페이스는 Java의 <code class="language-plaintext highlighter-rouge">List</code> 처럼, 대략적인 인터페이스의 사용 방법과, 각 메소드가 수행할 것으로 예상되는 동작들을 설명해주는 것으로 끝납니다.</p>
+
+<p>실제로 코드를 동작시키려면 <code class="language-plaintext highlighter-rouge">List</code>와 동일한 인터페이스를 갖는 구현체 <code class="language-plaintext highlighter-rouge">ArrayList</code>나 <code class="language-plaintext highlighter-rouge">LinkedList</code> 등의 도움을 받아야하죠.</p>
+
+<p>예를 들어 다음의 코드는 정수 리스트를 서로 다른 구현체로 생성하는 예시입니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">list1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">list2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;();</span>
+
+<span class="n">list1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+<span class="n">list2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>두 객체 <code class="language-plaintext highlighter-rouge">list1</code>, <code class="language-plaintext highlighter-rouge">list2</code> 에서 모두 <code class="language-plaintext highlighter-rouge">List</code> 인터페이스가 명시한 <code class="language-plaintext highlighter-rouge">add()</code>, <code class="language-plaintext highlighter-rouge">remove()</code>, <code class="language-plaintext highlighter-rouge">size()</code> 등과 같은 메소드를 제공합니다. 하지만, 두 객체는 서로 다르게 구현되었기에, 연산 종류에 따라서 시간복잡도가 달라지기도 하죠.</p>
+
+<p><code class="language-plaintext highlighter-rouge">ArrayList</code>와 <code class="language-plaintext highlighter-rouge">LinkedList</code>의 차이에 대해 더 알아보고 싶다면, 다음의 글을 추천합니다.
+<a href="https://www.nextree.co.kr/p6506/">» 자료구조: Linked List 대 ArrayList</a></p>
+
+<h2 id="interface와-srp를-활용해봅시다">Interface와 SRP를 활용해봅시다</h2>
+
+<p>다음은 복권 한 장을 생성하거나, 복권에 들어갈 숫자를 생성해주는 인터페이스 <code class="language-plaintext highlighter-rouge">Driver</code>입니다.
+<code class="language-plaintext highlighter-rouge">Driver</code>는 적절한 <code class="language-plaintext highlighter-rouge">Builder</code>와 <code class="language-plaintext highlighter-rouge">Supplier</code>를 입력받아 <strong>타깃이 되는 객체를 안정적으로 생성해주는 책임</strong>을 지고 있습니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">domain</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Driver</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">LotteryTicket</span> <span class="nf">createLotteryTicket</span><span class="o">(</span><span class="nc">LotteryTicketBuilder</span> <span class="n">ticketBuilder</span><span class="o">,</span> <span class="nc">LotteryNumberSupplier</span> <span class="n">numberSupplier</span><span class="o">);</span>
+
+    <span class="kd">public</span> <span class="nc">LotteryNumber</span> <span class="nf">createLotteryNumber</span><span class="o">(</span><span class="nc">LotteryNumberSupplier</span> <span class="n">numberSupplier</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="복권을-생성하는-과정에서의-책임-분배에-대하여">복권을 생성하는 과정에서의 책임 분배에 대하여</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">LotteryTicket</span> <span class="nf">createLotteryTicket</span><span class="o">(</span>
+    <span class="nc">LotteryTicketBuilder</span> <span class="n">ticketBuilder</span><span class="o">,</span>
+    <span class="nc">LotteryNumberSupplier</span> <span class="n">numberSupplier</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">createLotteryTicket()</code> 메소드를 보면, 인자로 <code class="language-plaintext highlighter-rouge">LotteryTicketBuilder</code>와 <code class="language-plaintext highlighter-rouge">LotteryNumberSupplier</code>를 받고있습니다. 두 객체는 각각 다음의 책임이 있죠.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">LotteryTicketBuilder</code>: <code class="language-plaintext highlighter-rouge">LotteryNumber</code>를 입력받아 <code class="language-plaintext highlighter-rouge">LotteryTicket</code> 을 안정적으로 생성하는 책임.</li>
+  <li><code class="language-plaintext highlighter-rouge">LotteryNumberSupplier</code>: <code class="language-plaintext highlighter-rouge">LotteryNumber</code>를 안정적으로 공급하는 책임.</li>
+</ul>
+
+<h3 id="왜-이렇게-책임이-분배되어있나요">왜 이렇게 책임이 분배되어있나요</h3>
+
+<p><code class="language-plaintext highlighter-rouge">LotteryTicketBuilder</code>에서는 이미 보장된 숫자를 입력받지, 자신이 해당 숫자가 복권에서 사용가능한지 검사하지는 않습니다. 만약 숫자의 범위까지 <code class="language-plaintext highlighter-rouge">LotteryTicketBuilder</code>에서 검사하게 된다면 SRP에 위배되니깐요.</p>
+
+<h3 id="그럼-숫자의-보장은-어디서">그럼 숫자의 보장은 어디서?</h3>
+
+<p><code class="language-plaintext highlighter-rouge">LotteryNumber</code>는 복권에서 사용할 수 있는 범위의 숫자임을 보장하는 객체입니다. 따라서, <code class="language-plaintext highlighter-rouge">LotteryNumber</code>를 안정적으로 공급해주는 책임이 있는 객체가 필요합니다. 그래서 인자로 <code class="language-plaintext highlighter-rouge">LotteryNumberSupplier</code>를 받게 되어있죠.</p>
+
+<h3 id="숫자를-공급받는-방법에-대하여">숫자를 공급받는 방법에 대하여</h3>
+
+<p><code class="language-plaintext highlighter-rouge">LotteryNumberSupplier</code>에게는 숫자(<code class="language-plaintext highlighter-rouge">LotteryNumber</code>)를 안정적으로 공급할 책임이 있지만, 어떻게 숫자를 생성할지까지 정의하지 않았습니다. <code class="language-plaintext highlighter-rouge">List</code> 를 구현하기 위한 방법으로 <code class="language-plaintext highlighter-rouge">ArrayList</code> 와 <code class="language-plaintext highlighter-rouge">LinkedList</code> 가 있는 것처럼, 구현은 사용자의 몫입니다.</p>
+
+<p>본 과제의 내용을 보면, 두 가지 방법으로 복권의 숫자 조합을 결정할 수 있어야합니다. 자동으로 생성하거나, 직접 입력하는 것입니다. 각각의 구현체를 만들어 아래와 같이 사용할 수 있도록 구현할 수 있습니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Driver</span> <span class="n">driver</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ConcreteDriver</span><span class="o">();</span>
+<span class="nc">LotteryNumberSupplier</span> <span class="n">manualNumberSupplier</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ManualLotteryNumberSupplier</span><span class="o">();</span>
+<span class="nc">LotteryNumberSupplier</span> <span class="n">autoNumberSupplier</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AutoLotteryNumberSupplier</span><span class="o">();</span>
+
+<span class="c1">// 직접 수동으로 숫자를 입력하여 복권 발급.</span>
+<span class="n">driver</span><span class="o">.</span><span class="na">createLotteryTicket</span><span class="o">(</span><span class="n">ticketBuilder</span><span class="o">,</span> <span class="n">manualNumberSupplier</span><span class="o">);</span>
+
+<span class="c1">// 숫자를 자동으로 생성하여 복권 발급.</span>
+<span class="n">driver</span><span class="o">.</span><span class="na">createLotteryTicket</span><span class="o">(</span><span class="n">ticketBuilder</span><span class="o">,</span> <span class="n">autoNumberSupplier</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">ManualLotteryNumberSupplier</code>은 사용자 입력을 안정적으로 받아오는 책임이 있는 <code class="language-plaintext highlighter-rouge">Controller</code>로 부터 숫자 입력을 받아와 <code class="language-plaintext highlighter-rouge">LotteryNumber</code>를 발급하고,
+<code class="language-plaintext highlighter-rouge">AutoLotteryNumberSupplier</code>는 미리 1~45의 숫자를 Stack에 push 해두고 shuffle 한 뒤, pop 해가며 <code class="language-plaintext highlighter-rouge">LotteryNumber</code>를 중복없이 공급합니다.</p>
+
+<h2 id="마무리">마무리</h2>
+
+<p>확실히 지난 과제에 비해 구현과 수정, 리펙터링에 소요되는 시간이 확연히 줄었습니다. 인터페이스를 이용하여 설계하는 것은 <strong>시간적 측면에서 확실히 이점</strong>이 있다고 느낍니다. 하지만 단점 또한 존재하는데, 설계를 마친 인터페이스에 대해 구현체가 생기기 시작하면 점점 수정이 어려워진다는 점이 있습니다. 그만큼 <strong>설계를 치밀하고 신중하게 해야할 필요가 있다</strong>는 것이겠죠.</p>
+
+<p>모든 것에는 Trade-off 가 있다고 합니다. 유지보수적인 측면에서 인터페이스를 사용할 때의 득실을 따져보면, 이번 과제를 통해 저는 득이 실보다 훨씬 크다고 생각하게 되었습니다. 하하!</p>
+
+<p>전체 코드는 <a href="https://github.com/kth496/java-lotto-implementation/pull/2">이 곳(PR)</a> 혹은 <a href="https://github.com/Hepheir/java-lotto-implementation">이 곳(Forked Repository)</a>에서 볼 수 있습니다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리 </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#java-spring-algorithm" class="page__taxonomy-item p-category" rel="tag">Java & Spring & Algorithm</a><span class="sep">, </span>
+    
+      <a href="/categories/#note" class="page__taxonomy-item p-category" rel="tag">Note</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트</strong> <time class="dt-published" datetime="2022-04-17T00:00:00+09:00">April 17, 2022</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/side%20project/github%20blog/make-posts-private" class="pagination--pager" title="Git Submodule을 이용한 Jekyll 블로그 테마와 포스트 분리
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="utterances-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/side%20project/github%20blog/make-posts-private" rel="permalink">
+    <span class="prefix">[GitHub Blog]</span>
+
+
+    <span>Git Submodule을 이용한 Jekyll 블로그 테마와 포스트 분리
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-12T11:58:09+09:00">April 12, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/images/boj-og.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/baekjoon%20online%20judge/boj-2661" rel="permalink">
+    <span class="prefix">[BOJ]</span>
+
+
+    <span>2661번 - 좋은수열
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-08T15:09:50+09:00">April 8, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">https://boj.kr/2661
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/side%20project/github%20blog/quick-frontmatter" rel="permalink">
+    <span class="prefix">[GitHub Blog]</span>
+
+
+    <span>포스트 머릿말 빠르게 작성하기 (VS Code User Snippets)
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-07T13:06:03+09:00">April 7, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">새로 포스트를 작성할 때 머릿말(Front Matter)을 작성하는 건 정말 번거롭습니다. 머릿말을 작성하는 것이 귀찮아서 완성되지 못하고 사라진 글감들이 제법 있는데, 이러한 고민을 Visual Studio Code의 사용자 코드조각으로 해결해보고자 합니다.
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/research/others/getip" rel="permalink">
+    <span class="prefix">[macOS]</span>
+
+
+    <span>내 ip 주소 알아내기 (IPv4)
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-01T00:00:00+09:00">April 1, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">사실 다음의 명령어로 간단히 해결가능하다.
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id" role="search">
+    <label class="sr-only" for="cse-search-input-box-id">
+      Enter your search term...
+    </label>
+    <input type="search" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results">
+    <gcse:searchresults-only></gcse:searchresults-only>
+  </div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/Hepheir" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 김동주. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '0f64ffd396fea8281';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ5XL7PJ98"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZ5XL7PJ98', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'Hepheir/hepheir.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+<!-- LaTex Support Start -->
+<script type="text/javascript" async
+	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<!-- LaTex Support End -->
+
+
+  </body>
+</html>

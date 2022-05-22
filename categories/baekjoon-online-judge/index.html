@@ -1,0 +1,1031 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>BAEKJOON Online Judge :: Today I Learned</title>
+<meta name="description" content="자기 개발 &amp; 취미 블로그">
+
+
+  <meta name="author" content="김동주">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Today I Learned">
+<meta property="og:title" content="BAEKJOON Online Judge">
+<meta property="og:url" content="https://hepheir.github.io/categories/baekjoon-online-judge/">
+
+
+  <meta property="og:description" content="자기 개발 &amp; 취미 블로그">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://hepheir.github.io/categories/baekjoon-online-judge/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "김동주",
+      "url": "https://hepheir.github.io/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="VqXMmWjovzbftQ3Cr6qVWv-8yGU7XPuBr0ptMcdncUA" />
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Today I Learned Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--category">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Today I Learned
+          <span class="site-subtitle">기록으로 남기는 공부 블로그</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/" title="Home">
+                
+                  <i class="fas fa-home" aria-hidden="true"></i>
+                
+              </a>
+            </li><li class="masthead__menu-item">
+              <a href="https://github.com/hepheir/hepheir.github.io" title="Git Repository">
+                
+                  <i class="fas fa-code-branch" aria-hidden="true"></i>
+                
+              </a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/" title="Categories">
+                
+                  <i class="fas fa-bookmark" aria-hidden="true"></i>
+                
+              </a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">홈</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories" itemprop="item"><span itemprop="name">Categories</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">BAEKJOON Online Judge</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://hepheir.github.io/">
+        <img src="https://avatars.githubusercontent.com/u/19310326" alt="김동주" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://hepheir.github.io/" itemprop="url">
+        김동주
+        <span title="작성한 포스트 수" style="font-size: 0.75em;">
+          (Lv.26)
+        </span>
+      </a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p> 📖  지식변태  📖</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">In your 🖤</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:hepheir@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">hepheir@gmail.com</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/Hepheir" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">Hepheir</span></a></li>
+          
+        
+          
+            <li><a href="https://www.instagram.com/hepxheir/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">hepxheir</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+
+  <p>
+    <img style="width: auto;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FHepheir&count_bg=%23DA85FD&title_bg=%233D3D3D&icon=&icon_color=%23E7E7E7&title=%E2%98%86+hits&edge_flat=true"/>
+  </p>
+
+  
+
+<nav class="nav__list">
+  <h3 class="nav__title" style="padding-left: 0;">
+    카테고리
+    <label for="ac-categories">펼치기/접기</label>
+  </h3>
+  <input id="ac-categories" name="accordion-categories" type="checkbox" />
+  <ul class="nav__items">
+    <li>
+      <ul style="padding: 0 8px;">
+        
+          
+            <li>
+              <a href="/categories/algorithm/" style="font-weight: bold;">
+                Algorithm
+                <span class="category-post-count" style="opacity: 0.33;">
+                  (13)
+                </span>
+              </a>
+            </li>
+
+            
+              <ul style="padding: 0 8px;">
+                
+                  
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/baekjoon-online-judge/">
+                        BAEKJOON Online Judge
+                        <span class="category-post-count" style="opacity: 0.33;">(10)</span>
+                      </a>
+                    </li>
+                  
+                
+              </ul>
+            
+
+            <hr>
+          
+        
+          
+            <li>
+              <a href="/categories/note/" style="font-weight: bold;">
+                Note
+                <span class="category-post-count" style="opacity: 0.33;">
+                  (1)
+                </span>
+              </a>
+            </li>
+
+            
+              <ul style="padding: 0 8px;">
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/java-spring-algorithm/">
+                        Java & Spring & Algorithm
+                        <span class="category-post-count" style="opacity: 0.33;">(1)</span>
+                      </a>
+                    </li>
+                  
+                
+              </ul>
+            
+
+            <hr>
+          
+        
+          
+            <li>
+              <a href="/categories/research/" style="font-weight: bold;">
+                Research
+                <span class="category-post-count" style="opacity: 0.33;">
+                  (4)
+                </span>
+              </a>
+            </li>
+
+            
+              <ul style="padding: 0 8px;">
+                
+                  
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/others/">
+                        Others
+                        <span class="category-post-count" style="opacity: 0.33;">(4)</span>
+                      </a>
+                    </li>
+                  
+                
+              </ul>
+            
+
+            <hr>
+          
+        
+          
+            <li>
+              <a href="/categories/side-project/" style="font-weight: bold;">
+                Side Project
+                <span class="category-post-count" style="opacity: 0.33;">
+                  (8)
+                </span>
+              </a>
+            </li>
+
+            
+              <ul style="padding: 0 8px;">
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/github-blog/">
+                        GitHub Blog
+                        <span class="category-post-count" style="opacity: 0.33;">(5)</span>
+                      </a>
+                    </li>
+                  
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/jekyll-n-hyde/">
+                        Jekyll n Hyde
+                        <span class="category-post-count" style="opacity: 0.33;">(2)</span>
+                      </a>
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+
+            <hr>
+          
+        
+      </ul>
+    </li>
+  </ul>
+</nav>
+  
+  </div>
+
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">BAEKJOON Online Judge</h1>
+    
+    
+
+
+<div class="entries-list">
+  
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/baekjoon%20online%20judge/boj-2661" rel="permalink">
+    <span class="prefix">[BOJ]</span>
+
+
+    <span>2661번 - 좋은수열
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-08T15:09:50+09:00">April 8, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">https://boj.kr/2661
+
+</p>
+  </article>
+</div>
+
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/baekjoon%20online%20judge/boj-2798" rel="permalink">
+    <span class="prefix">[BOJ]</span>
+
+
+    <span>2789번 - 블랙잭 (완전 탐색)
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-29T00:00:00+09:00">March 29, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">2주차 알고리즘 수업 과제입니다.
+
+</p>
+  </article>
+</div>
+
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/baekjoon%20online%20judge/boj-15649" rel="permalink">
+    <span class="prefix">[BOJ]</span>
+
+
+    <span>15649번 - N과 M(1) (완전 탐색, DFS)
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-29T00:00:00+09:00">March 29, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">2주차 알고리즘 수업 과제입니다.
+
+</p>
+  </article>
+</div>
+
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/baekjoon%20online%20judge/boj-1003" rel="permalink">
+    <span class="prefix">[BOJ]</span>
+
+
+    <span>1003번 - 피보나치 함수 (동적프로그래밍, 메모이제이션)
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-29T00:00:00+09:00">March 29, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">2주차 알고리즘 수업 과제입니다.
+
+</p>
+  </article>
+</div>
+
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/baekjoon%20online%20judge/baekjoon-10835" rel="permalink">
+    <span class="prefix">[BOJ]</span>
+
+
+    <span>10835번 - 카드게임
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-28T00:00:00+09:00">February 28, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">(골드 V) 두 개의 카드더미로 하는 게임에서 얻을 수 있는 최대 점수를 동적 프로그래밍과 DFS를 이용하여 풀이하였다.
+
+</p>
+  </article>
+</div>
+
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/baekjoon%20online%20judge/baekjoon-5585" rel="permalink">
+    <span class="prefix">[BOJ]</span>
+
+
+    <span>5585번 - 거스름돈
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-27T00:00:00+09:00">February 27, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">(브론즈 II) 탐욕 알고리즘을 이용한 거스름돈 구하기!
+
+</p>
+  </article>
+</div>
+
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/baekjoon%20online%20judge/baekjoon-1789" rel="permalink">
+    <span class="prefix">[BOJ]</span>
+
+
+    <span>1789번 - 수들의 합
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-27T00:00:00+09:00">February 27, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">(실버 V) 그리디 문제 - 서로 다른 N개의 자연수의 합이 S일 때, N의 최댓값을 구하기.
+
+</p>
+  </article>
+</div>
+
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/baekjoon%20online%20judge/baekjoon-1240" rel="permalink">
+    <span class="prefix">[BOJ]</span>
+
+
+    <span>1240번 - 노드사이의 거리
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-27T00:00:00+09:00">February 27, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">(골드 V) N개의 노드로 이루어진 트리가 주어질 때, M개의 노드 쌍의 거리를 각각 구하는 문제.
+
+</p>
+  </article>
+</div>
+
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/baekjoon%20online%20judge/baekjoon-contest-760-1" rel="permalink">
+    <span class="prefix">[BOJ]</span>
+
+
+    <span>시간복잡도를 배운 도도
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-20T00:00:00+09:00">February 20, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">문제 링크: https://www.acmicpc.net/contest/problem/760/1
+
+</p>
+  </article>
+</div>
+
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/baekjoon%20online%20judge/baekjoon-1671" rel="permalink">
+    <span class="prefix">[BOJ]</span>
+
+
+    <span>1671번 - 상어의 저녁식사
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-02-02T00:00:00+09:00">February 2, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">(플레티넘 III) 이분 매칭 알고리즘을 이용하여 1671번 “상어의 저녁식사”를 풀어보았다.
+
+</p>
+  </article>
+</div>
+
+</div>
+
+  </div>
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id" role="search">
+    <label class="sr-only" for="cse-search-input-box-id">
+      Enter your search term...
+    </label>
+    <input type="search" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results">
+    <gcse:searchresults-only></gcse:searchresults-only>
+  </div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/Hepheir" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 김동주. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '0f64ffd396fea8281';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ5XL7PJ98"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZ5XL7PJ98', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+
+
+<!-- LaTex Support Start -->
+<script type="text/javascript" async
+	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<!-- LaTex Support End -->
+
+
+  </body>
+</html>

@@ -1,0 +1,1169 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>내 ip 주소 알아내기 (IPv4) :: Today I Learned</title>
+<meta name="description" content="사실 다음의 명령어로 간단히 해결가능하다.">
+
+
+  <meta name="author" content="김동주">
+  
+  <meta property="article:author" content="김동주">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Today I Learned">
+<meta property="og:title" content="내 ip 주소 알아내기 (IPv4)">
+<meta property="og:url" content="https://hepheir.github.io/research/others/getip">
+
+
+  <meta property="og:description" content="사실 다음의 명령어로 간단히 해결가능하다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-04-01T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://hepheir.github.io/research/others/getip">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "김동주",
+      "url": "https://hepheir.github.io/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="VqXMmWjovzbftQ3Cr6qVWv-8yGU7XPuBr0ptMcdncUA" />
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Today I Learned Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Today I Learned
+          <span class="site-subtitle">기록으로 남기는 공부 블로그</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/" title="Home">
+                
+                  <i class="fas fa-home" aria-hidden="true"></i>
+                
+              </a>
+            </li><li class="masthead__menu-item">
+              <a href="https://github.com/hepheir/hepheir.github.io" title="Git Repository">
+                
+                  <i class="fas fa-code-branch" aria-hidden="true"></i>
+                
+              </a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/" title="Categories">
+                
+                  <i class="fas fa-bookmark" aria-hidden="true"></i>
+                
+              </a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">홈</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/research" itemprop="item"><span itemprop="name">Research</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/others" itemprop="item"><span itemprop="name">Others</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">내 ip 주소 알아내기 (IPv4)</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://hepheir.github.io/">
+        <img src="https://avatars.githubusercontent.com/u/19310326" alt="김동주" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://hepheir.github.io/" itemprop="url">
+        김동주
+        <span title="작성한 포스트 수" style="font-size: 0.75em;">
+          (Lv.26)
+        </span>
+      </a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p> 📖  지식변태  📖</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">In your 🖤</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:hepheir@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">hepheir@gmail.com</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/Hepheir" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">Hepheir</span></a></li>
+          
+        
+          
+            <li><a href="https://www.instagram.com/hepxheir/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">hepxheir</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+
+  <p>
+    <img style="width: auto;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FHepheir&count_bg=%23DA85FD&title_bg=%233D3D3D&icon=&icon_color=%23E7E7E7&title=%E2%98%86+hits&edge_flat=true"/>
+  </p>
+
+  
+
+<nav class="nav__list">
+  <h3 class="nav__title" style="padding-left: 0;">
+    카테고리
+    <label for="ac-categories">펼치기/접기</label>
+  </h3>
+  <input id="ac-categories" name="accordion-categories" type="checkbox" />
+  <ul class="nav__items">
+    <li>
+      <ul style="padding: 0 8px;">
+        
+          
+            <li>
+              <a href="/categories/algorithm/" style="font-weight: bold;">
+                Algorithm
+                <span class="category-post-count" style="opacity: 0.33;">
+                  (13)
+                </span>
+              </a>
+            </li>
+
+            
+              <ul style="padding: 0 8px;">
+                
+                  
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/baekjoon-online-judge/">
+                        BAEKJOON Online Judge
+                        <span class="category-post-count" style="opacity: 0.33;">(10)</span>
+                      </a>
+                    </li>
+                  
+                
+              </ul>
+            
+
+            <hr>
+          
+        
+          
+            <li>
+              <a href="/categories/note/" style="font-weight: bold;">
+                Note
+                <span class="category-post-count" style="opacity: 0.33;">
+                  (1)
+                </span>
+              </a>
+            </li>
+
+            
+              <ul style="padding: 0 8px;">
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/java-spring-algorithm/">
+                        Java & Spring & Algorithm
+                        <span class="category-post-count" style="opacity: 0.33;">(1)</span>
+                      </a>
+                    </li>
+                  
+                
+              </ul>
+            
+
+            <hr>
+          
+        
+          
+            <li>
+              <a href="/categories/research/" style="font-weight: bold;">
+                Research
+                <span class="category-post-count" style="opacity: 0.33;">
+                  (4)
+                </span>
+              </a>
+            </li>
+
+            
+              <ul style="padding: 0 8px;">
+                
+                  
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/others/">
+                        Others
+                        <span class="category-post-count" style="opacity: 0.33;">(4)</span>
+                      </a>
+                    </li>
+                  
+                
+              </ul>
+            
+
+            <hr>
+          
+        
+          
+            <li>
+              <a href="/categories/side-project/" style="font-weight: bold;">
+                Side Project
+                <span class="category-post-count" style="opacity: 0.33;">
+                  (8)
+                </span>
+              </a>
+            </li>
+
+            
+              <ul style="padding: 0 8px;">
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/github-blog/">
+                        GitHub Blog
+                        <span class="category-post-count" style="opacity: 0.33;">(5)</span>
+                      </a>
+                    </li>
+                  
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/jekyll-n-hyde/">
+                        Jekyll n Hyde
+                        <span class="category-post-count" style="opacity: 0.33;">(2)</span>
+                      </a>
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+
+            <hr>
+          
+        
+      </ul>
+    </li>
+  </ul>
+</nav>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="내 ip 주소 알아내기 (IPv4)">
+    <meta itemprop="description" content="사실 다음의 명령어로 간단히 해결가능하다.">
+    <meta itemprop="datePublished" content="2022-04-01T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://hepheir.github.io/research/others/getip" class="u-url" itemprop="url">
+    <span class="prefix">[macOS]</span>
+
+
+    <span>내 ip 주소 알아내기 (IPv4)
+</span>
+
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-01T00:00:00+09:00">April 1, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#grep">grep</a></li><li><a href="#grep을-이용하여-개선해보기">grep을 이용하여 개선해보기</a></li><li><a href="#정규표현식으로-ip-주소만-추출하기">정규표현식으로 ip 주소만 추출하기</a></li><li><a href="#정규표현식-lookahead-패턴">정규표현식 Lookahead 패턴</a></li><li><a href="#perl-정규표현식">Perl 정규표현식</a></li><li><a href="#유효한-ip-주소만-추출">유효한 ip 주소만 추출</a></li><li><a href="#명령어-등록">명령어 등록</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>사실 다음의 명령어로 간단히 해결가능하다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ifconfig
+</code></pre></div></div>
+
+<p>(Windows 라면 <code class="language-plaintext highlighter-rouge">ipconfig</code>)</p>
+
+<p>물론, 아래와 같이 나온 정보들에서 찾아야 한다는 것이 흠이다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lo0: flags=8049&lt;UP,LOOPBACK,RUNNING,MULTICAST&gt; mtu 16384
+        options=1203&lt;RXCSUM,TXCSUM,TXSTATUS,SW_TIMESTAMP&gt;
+        inet 127.0.0.1 netmask 0xff000000
+        inet6 ::1 prefixlen 128
+        inet6 fe80::1%lo0 prefixlen 64 scopeid 0x1
+        nd6 options=201&lt;PERFORMNUD,DAD&gt;
+gif0: flags=8010&lt;POINTOPOINT,MULTICAST&gt; mtu 1280
+stf0: flags=0&lt;&gt; mtu 1280
+anpi0: flags=8863&lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500
+        options=400&lt;CHANNEL_IO&gt;
+        ether d2:8d:4d:7a:d3:66
+        inet6 fe80::d08d:4dff:fe7a:d366%anpi0 prefixlen 64 scopeid 0x4
+        nd6 options=201&lt;PERFORMNUD,DAD&gt;
+        media: none
+        status: inactive
+anpi1: flags=8863&lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500
+        options=400&lt;CHANNEL_IO&gt;
+        ether d2:8d:4d:7a:d3:67
+        inet6 fe80::d08d:4dff:fe7a:d367%anpi1 prefixlen 64 scopeid 0x5
+        nd6 options=201&lt;PERFORMNUD,DAD&gt;
+        media: none
+        status: inactive
+ap1: flags=8843&lt;UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500
+        options=400&lt;CHANNEL_IO&gt;
+        ether a2:78:17:a5:8c:ef
+...
+</code></pre></div></div>
+
+<h2 id="grep">grep</h2>
+
+<p>Linux 계열 OS에는 <code class="language-plaintext highlighter-rouge">grep</code> 이라는 프로그램이 있다. 이를 이용하면 정규표현식을 이용하여 문자열에서 원하는 패턴의 문자열을 찾을 수 있다.</p>
+
+<p>macOS에는 기본적으로 2.6.0 버전이 설치되어있다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">grep</span> <span class="nt">--version</span>
+<span class="c"># grep (BSD grep, GNU compatible) 2.6.0-FreeBSD</span>
+</code></pre></div></div>
+
+<h2 id="grep을-이용하여-개선해보기">grep을 이용하여 개선해보기</h2>
+
+<p><code class="language-plaintext highlighter-rouge">ifconfig</code> 의 출력을 보면, 대부분 ip 주소는 앞에 <code class="language-plaintext highlighter-rouge">"inet "</code>이 붙어있다. 이 패턴을 이용하여 출력을 간추려보자.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ifconfig | <span class="nb">grep</span> <span class="s2">"inet "</span>
+<span class="c">#         inet 127.0.0.1 netmask 0xff000000</span>
+<span class="c">#         inet 172.30.1.16 netmask 0xffffff00 broadcast 172.30.1.255</span>
+</code></pre></div></div>
+
+<p>위의 결과에서 “127.0.0.1”은 Loopback ip 이므로 찾는 의미가 없다. 추론에 의해 “172.30.1.16”가 내가 찾는 ip 주소라는 것을 알 수 있다.</p>
+
+<h2 id="정규표현식으로-ip-주소만-추출하기">정규표현식으로 ip 주소만 추출하기</h2>
+
+<p><code class="language-plaintext highlighter-rouge">grep</code>을 정규표현식과 함께 사용하면 활용도가 무긍무진하다. 정규표현식으로 <code class="language-plaintext highlighter-rouge">ifconfig</code>의 결과에서 ip 주소만 추출하는 것도 가능하다!</p>
+
+<p>우선 정규표현식으로 ip 주소 패턴을 나타내면 다음과 같을 것이다:</p>
+
+<pre><code class="language-regexp">[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+
+</code></pre>
+
+<p>여기서 정규표현식의 문자 클래스<code class="language-plaintext highlighter-rouge">[]</code>는 <strong>확장 정규표현식</strong> 문법이므로, <code class="language-plaintext highlighter-rouge">grep</code>에서 확장 정규표현식을 사용할 수 있게 해주는 <code class="language-plaintext highlighter-rouge">-E</code> 옵션을 사용해야 한다. 덤으로, <code class="language-plaintext highlighter-rouge">-o</code> 옵션을 사용하면 패턴과 일치하는 부분만 출력해준다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ifconfig | <span class="nb">grep</span> <span class="s2">"[0-9]+</span><span class="se">\.</span><span class="s2">[0-9]+</span><span class="se">\.</span><span class="s2">[0-9]+</span><span class="se">\.</span><span class="s2">[0-9]+"</span> <span class="nt">-E</span>
+<span class="c">#         inet 127.0.0.1 netmask 0xff000000</span>
+<span class="c">#         inet 172.30.1.16 netmask 0xffffff00 broadcast 172.30.1.255</span>
+
+<span class="nv">$ </span>ifconfig | <span class="nb">grep</span> <span class="s2">"[0-9]+</span><span class="se">\.</span><span class="s2">[0-9]+</span><span class="se">\.</span><span class="s2">[0-9]+</span><span class="se">\.</span><span class="s2">[0-9]+"</span> <span class="nt">-E</span> <span class="nt">-o</span>
+<span class="c"># 127.0.0.1</span>
+<span class="c"># 172.30.1.16</span>
+<span class="c"># 172.30.1.255</span>
+</code></pre></div></div>
+
+<p>ip 주소들만 골라 깔끔하게 출력했으나, 이 중 어떤 것이 진짜로 내가 찾는 ip 주소인지는 내가 직접 보고 선택해야한다.</p>
+
+<p>(위에서 <code class="language-plaintext highlighter-rouge">127.0.0.1</code>는 루프백, <code class="language-plaintext highlighter-rouge">172.30.1.255</code>는 게이트웨이이다.)</p>
+
+<h2 id="정규표현식-lookahead-패턴">정규표현식 Lookahead 패턴</h2>
+
+<p>정규표현식을 깊게 파보면 Lookahead, Lookbehind 라는 패턴이 있다.</p>
+
+<table class="standard-table">
+  <thead>
+    <tr>
+      <th scope="col">Characters</th>
+      <th scope="col">Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>x(?=y)</code></td>
+      <td>
+        <p>
+          <strong>Lookahead assertion: </strong>Matches "x" only if "x" is
+          followed by "y". For example, /<code>Jack(?=Sprat)/</code> matches
+          "Jack" only if it is followed by "Sprat".<br /><code>/Jack(?=Sprat|Frost)/</code>
+          matches "Jack" only if it is followed by "Sprat" or "Frost". However,
+          neither "Sprat" nor "Frost" is part of the match results.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td><code>x(?!y)</code></td>
+      <td>
+        <p>
+          <strong>Negative lookahead assertion: </strong>Matches "x" only if "x"
+          is not followed by "y". For example, <code>/\d+(?!\.)/</code> matches
+          a number only if it is not followed by a decimal point. <code>/\d+(?!\.)/.exec('3.141')</code>
+          matches "141" but not "3".
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td><code>(?&lt;=y)x</code></td>
+      <td>
+        <p>
+          <strong>Lookbehind assertion: </strong>Matches "x" only if "x" is
+          preceded by "y". For example,
+          <code>/(?&lt;=Jack)Sprat/</code> matches "Sprat" only if it is
+          preceded by "Jack". <code>/(?&lt;=Jack|Tom)Sprat/</code> matches
+          "Sprat" only if it is preceded by "Jack" or "Tom". However, neither
+          "Jack" nor "Tom" is part of the match results.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td><code>(?&lt;!y)x</code></td>
+      <td>
+        <p>
+          <strong>Negative lookbehind assertion: </strong>Matches "x" only if
+          "x" is not preceded by "y". For example,
+          <code>/(?&lt;!-)\d+/</code> matches a number only if it is not
+          preceded by a minus sign. <code>/(?&lt;!-)\d+/.exec('3')</code>
+          matches "3". <code>/(?&lt;!-)\d+/.exec('-3')</code> match is not
+          found because the number is preceded by the minus sign.
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Cheatsheet#other_assertions">» Mozilla JavaScript Guide - Regular Expressions 보기</a></p>
+
+<p>상당히 유용한 패턴으로, Lookahead의 경우 “A앞에 있는 B” 만 골라서 찾는것이 가능하다.</p>
+
+<p>이 패턴을 <code class="language-plaintext highlighter-rouge">grep</code>의 <code class="language-plaintext highlighter-rouge">-o</code> 옵션과 함께 활용하면 “A앞에 있는 B”에서 뒤따라오는 패턴인 “A”를 버리고 “B” 만 추출해내는 것이 가능하다. 말로 설명하기 어렵다. 예시를 보자:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// `"Hi, I'm &lt;name&gt;."` 에서 `&lt;name&gt;`만 출력하는 패턴:</span>
+<span class="c1">// -&gt; "Hi, I'm " 뒤에 오고, "." 앞에 오는 길이가 1 이상인 모든 알파벳</span>
+<span class="c1">// (?&lt;=Hi, I'm )\w+(?=\.)</span>
+
+<span class="o">&gt;</span> <span class="dl">"</span><span class="s2">Hi, I'm Hepheir.</span><span class="dl">"</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/</span><span class="se">(?&lt;</span><span class="sr">=Hi, I'm </span><span class="se">)\w</span><span class="sr">+</span><span class="se">(?=\.)</span><span class="sr">/</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="dl">'</span><span class="s1">Hepheir</span><span class="dl">'</span>
+
+<span class="o">&gt;</span> <span class="dl">"</span><span class="s2">Hi, I'm WakGood.</span><span class="dl">"</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/</span><span class="se">(?&lt;</span><span class="sr">=Hi, I'm </span><span class="se">)\w</span><span class="sr">+</span><span class="se">(?=\.)</span><span class="sr">/</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="dl">'</span><span class="s1">WakGood</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<h2 id="perl-정규표현식">Perl 정규표현식</h2>
+
+<p>위의 Lookahead, Lookbehind 와 같은 패턴은 확장 정규표현식이 아니라, <strong>Perl 언어에서 사용하는 정규표현식</strong> 패턴이다. <code class="language-plaintext highlighter-rouge">grep</code>에도 <code class="language-plaintext highlighter-rouge">-P</code> 옵션으로 Perl 정규표현식을 사용할 수 있는데, 아쉽게도 2.* 버전에서는 지원되지 않는다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">homebrew</code>를 사용하여 <code class="language-plaintext highlighter-rouge">grep</code>을 업그레이드 해보자.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew <span class="nb">install grep</span>
+
+<span class="c"># ...</span>
+<span class="c"># ==&gt; grep</span>
+<span class="c"># All commands have been installed with the prefix "g".</span>
+<span class="c"># ...</span>
+</code></pre></div></div>
+
+<p>특이하게도 <code class="language-plaintext highlighter-rouge">homebrew</code>로 설치하면 명령어 이름앞에 <code class="language-plaintext highlighter-rouge">"g"</code>가 붙은형태로 설치가 된다. <code class="language-plaintext highlighter-rouge">grep</code>의 경우 <code class="language-plaintext highlighter-rouge">ggrep</code>으로 설치가 된 것이다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ggrep <span class="nt">--version</span>
+<span class="c"># ggrep (GNU grep) 3.7</span>
+<span class="c"># Packaged by Homebrew</span>
+<span class="c"># Copyright (C) 2021 Free Software Foundation, Inc.</span>
+<span class="c"># License GPLv3+: GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;.</span>
+<span class="c"># This is free software: you are free to change and redistribute it.</span>
+<span class="c"># There is NO WARRANTY, to the extent permitted by law.</span>
+<span class="c">#</span>
+<span class="c"># Written by Mike Haertel and others; see</span>
+<span class="c"># &lt;https://git.sv.gnu.org/cgit/grep.git/tree/AUTHORS&gt;.</span>
+</code></pre></div></div>
+
+<p>3.7 버전의 <code class="language-plaintext highlighter-rouge">grep</code>(<code class="language-plaintext highlighter-rouge">ggrep</code>)이 설치되었으므로, 이제 Perl 정규표현식을 사용할 수 있을 것이다.</p>
+
+<h2 id="유효한-ip-주소만-추출">유효한 ip 주소만 추출</h2>
+
+<p><code class="language-plaintext highlighter-rouge">ifconfig</code>의 출력을 보면, 유효한 ip 주소는 뒤에 “broadcast” 와 함께 게이트웨이 ip 주소를 보여준다. 이를 정규표현식으로 추출한다면, 다음의 패턴을 사용하면 될 것이다:</p>
+
+<pre><code class="language-regexp">[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+(?=.+broadcast)
+</code></pre>
+
+<p>곧바로 적용하자.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ifconfig | ggrep <span class="s2">"[0-9]+</span><span class="se">\.</span><span class="s2">[0-9]+</span><span class="se">\.</span><span class="s2">[0-9]+</span><span class="se">\.</span><span class="s2">[0-9]+(?=.+broadcast)"</span> <span class="nt">-P</span> <span class="nt">-o</span>
+<span class="c"># 172.30.1.16</span>
+</code></pre></div></div>
+
+<p>깔끔하게 원하는 결과가 나왔다.</p>
+
+<p>… 그치만 명령어가 너무 길다. 편리함을 희생해 정확함을 얻기에는 트레이드 오프가 너무 심하지 않나 생각이 든다. 🫤</p>
+
+<h2 id="명령어-등록">명령어 등록</h2>
+
+<p>이럴 때 쓰는 리눅스 명령어가 있다. <code class="language-plaintext highlighter-rouge">alias</code> 어떤 긴 것이라도, 단축어를 만들어주는 좋은 녀석이다.</p>
+
+<p>새로운 명령어의 이름은 적당히 <code class="language-plaintext highlighter-rouge">getip</code>로 하자.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">alias </span><span class="nv">getip</span><span class="o">=</span><span class="s2">"ifconfig | ggrep </span><span class="se">\"</span><span class="s2">[0-9]+</span><span class="se">\.</span><span class="s2">[0-9]+</span><span class="se">\.</span><span class="s2">[0-9]+</span><span class="se">\.</span><span class="s2">[0-9]+(?=.+broadcast)</span><span class="se">\"</span><span class="s2"> -P -o"</span>
+
+<span class="nv">$ </span>getip
+<span class="c"># 172.30.1.16</span>
+</code></pre></div></div>
+
+<p>이제 만족스러워졌다. 😎 👍</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리 </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#others" class="page__taxonomy-item p-category" rel="tag">Others</a><span class="sep">, </span>
+    
+      <a href="/categories/#research" class="page__taxonomy-item p-category" rel="tag">Research</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트</strong> <time class="dt-published" datetime="2022-04-01T00:00:00+09:00">April 1, 2022</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/research/others/javascript-yyyy-mm-dd" class="pagination--pager" title="YYYY-MM-DD 형식
+">이전</a>
+    
+    
+      <a href="/side%20project/github%20blog/quick-frontmatter" class="pagination--pager" title="포스트 머릿말 빠르게 작성하기 (VS Code User Snippets)
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="utterances-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/note/java%20&%20spring%20&%20algorithm/java-lotto-implementation" rel="permalink">
+    <span class="prefix">[Java & Spring & Algorithm]</span>
+
+
+    <span>자바 로또 프로젝트
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-17T00:00:00+09:00">April 17, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  
+
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/side%20project/github%20blog/make-posts-private" rel="permalink">
+    <span class="prefix">[GitHub Blog]</span>
+
+
+    <span>Git Submodule을 이용한 Jekyll 블로그 테마와 포스트 분리
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-12T11:58:09+09:00">April 12, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/images/boj-og.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/baekjoon%20online%20judge/boj-2661" rel="permalink">
+    <span class="prefix">[BOJ]</span>
+
+
+    <span>2661번 - 좋은수열
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-08T15:09:50+09:00">April 8, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">https://boj.kr/2661
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/side%20project/github%20blog/quick-frontmatter" rel="permalink">
+    <span class="prefix">[GitHub Blog]</span>
+
+
+    <span>포스트 머릿말 빠르게 작성하기 (VS Code User Snippets)
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-07T13:06:03+09:00">April 7, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">새로 포스트를 작성할 때 머릿말(Front Matter)을 작성하는 건 정말 번거롭습니다. 머릿말을 작성하는 것이 귀찮아서 완성되지 못하고 사라진 글감들이 제법 있는데, 이러한 고민을 Visual Studio Code의 사용자 코드조각으로 해결해보고자 합니다.
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id" role="search">
+    <label class="sr-only" for="cse-search-input-box-id">
+      Enter your search term...
+    </label>
+    <input type="search" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results">
+    <gcse:searchresults-only></gcse:searchresults-only>
+  </div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/Hepheir" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 김동주. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '0f64ffd396fea8281';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ5XL7PJ98"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZ5XL7PJ98', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'Hepheir/hepheir.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+<!-- LaTex Support Start -->
+<script type="text/javascript" async
+	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<!-- LaTex Support End -->
+
+
+  </body>
+</html>

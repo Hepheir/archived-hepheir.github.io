@@ -1,0 +1,1236 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>개별 카테고리 페이지를 자동으로 생성하게 하였다 :: Today I Learned</title>
+<meta name="description" content="2022년 3월 2일, 블로그에 카테고리 페이지를 자동으로 생성하는 기능을 추가하였다.">
+
+
+  <meta name="author" content="김동주">
+  
+  <meta property="article:author" content="김동주">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Today I Learned">
+<meta property="og:title" content="개별 카테고리 페이지를 자동으로 생성하게 하였다">
+<meta property="og:url" content="https://hepheir.github.io/side%20project/github%20blog/each-category-pages">
+
+
+  <meta property="og:description" content="2022년 3월 2일, 블로그에 카테고리 페이지를 자동으로 생성하는 기능을 추가하였다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-03-04T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://hepheir.github.io/side%20project/github%20blog/each-category-pages">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "김동주",
+      "url": "https://hepheir.github.io/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="VqXMmWjovzbftQ3Cr6qVWv-8yGU7XPuBr0ptMcdncUA" />
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Today I Learned Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Today I Learned
+          <span class="site-subtitle">기록으로 남기는 공부 블로그</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/" title="Home">
+                
+                  <i class="fas fa-home" aria-hidden="true"></i>
+                
+              </a>
+            </li><li class="masthead__menu-item">
+              <a href="https://github.com/hepheir/hepheir.github.io" title="Git Repository">
+                
+                  <i class="fas fa-code-branch" aria-hidden="true"></i>
+                
+              </a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/" title="Categories">
+                
+                  <i class="fas fa-bookmark" aria-hidden="true"></i>
+                
+              </a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">홈</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/side-project" itemprop="item"><span itemprop="name">Side project</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/github-blog" itemprop="item"><span itemprop="name">Github blog</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">개별 카테고리 페이지를 자동으로 생성하게 하였다</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://hepheir.github.io/">
+        <img src="https://avatars.githubusercontent.com/u/19310326" alt="김동주" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://hepheir.github.io/" itemprop="url">
+        김동주
+        <span title="작성한 포스트 수" style="font-size: 0.75em;">
+          (Lv.26)
+        </span>
+      </a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p> 📖  지식변태  📖</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">In your 🖤</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:hepheir@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">hepheir@gmail.com</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/Hepheir" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">Hepheir</span></a></li>
+          
+        
+          
+            <li><a href="https://www.instagram.com/hepxheir/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">hepxheir</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+
+  <p>
+    <img style="width: auto;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FHepheir&count_bg=%23DA85FD&title_bg=%233D3D3D&icon=&icon_color=%23E7E7E7&title=%E2%98%86+hits&edge_flat=true"/>
+  </p>
+
+  
+
+<nav class="nav__list">
+  <h3 class="nav__title" style="padding-left: 0;">
+    카테고리
+    <label for="ac-categories">펼치기/접기</label>
+  </h3>
+  <input id="ac-categories" name="accordion-categories" type="checkbox" />
+  <ul class="nav__items">
+    <li>
+      <ul style="padding: 0 8px;">
+        
+          
+            <li>
+              <a href="/categories/algorithm/" style="font-weight: bold;">
+                Algorithm
+                <span class="category-post-count" style="opacity: 0.33;">
+                  (13)
+                </span>
+              </a>
+            </li>
+
+            
+              <ul style="padding: 0 8px;">
+                
+                  
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/baekjoon-online-judge/">
+                        BAEKJOON Online Judge
+                        <span class="category-post-count" style="opacity: 0.33;">(10)</span>
+                      </a>
+                    </li>
+                  
+                
+              </ul>
+            
+
+            <hr>
+          
+        
+          
+            <li>
+              <a href="/categories/note/" style="font-weight: bold;">
+                Note
+                <span class="category-post-count" style="opacity: 0.33;">
+                  (1)
+                </span>
+              </a>
+            </li>
+
+            
+              <ul style="padding: 0 8px;">
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/java-spring-algorithm/">
+                        Java & Spring & Algorithm
+                        <span class="category-post-count" style="opacity: 0.33;">(1)</span>
+                      </a>
+                    </li>
+                  
+                
+              </ul>
+            
+
+            <hr>
+          
+        
+          
+            <li>
+              <a href="/categories/research/" style="font-weight: bold;">
+                Research
+                <span class="category-post-count" style="opacity: 0.33;">
+                  (4)
+                </span>
+              </a>
+            </li>
+
+            
+              <ul style="padding: 0 8px;">
+                
+                  
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/others/">
+                        Others
+                        <span class="category-post-count" style="opacity: 0.33;">(4)</span>
+                      </a>
+                    </li>
+                  
+                
+              </ul>
+            
+
+            <hr>
+          
+        
+          
+            <li>
+              <a href="/categories/side-project/" style="font-weight: bold;">
+                Side Project
+                <span class="category-post-count" style="opacity: 0.33;">
+                  (8)
+                </span>
+              </a>
+            </li>
+
+            
+              <ul style="padding: 0 8px;">
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/github-blog/">
+                        GitHub Blog
+                        <span class="category-post-count" style="opacity: 0.33;">(5)</span>
+                      </a>
+                    </li>
+                  
+                
+                  
+                    <li style="margin-top: 4px;">
+                      <a href="/categories/jekyll-n-hyde/">
+                        Jekyll n Hyde
+                        <span class="category-post-count" style="opacity: 0.33;">(2)</span>
+                      </a>
+                    </li>
+                  
+                
+                  
+                
+                  
+                
+              </ul>
+            
+
+            <hr>
+          
+        
+      </ul>
+    </li>
+  </ul>
+</nav>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="개별 카테고리 페이지를 자동으로 생성하게 하였다">
+    <meta itemprop="description" content="2022년 3월 2일, 블로그에 카테고리 페이지를 자동으로 생성하는 기능을 추가하였다.">
+    <meta itemprop="datePublished" content="2022-03-04T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="https://hepheir.github.io/side%20project/github%20blog/each-category-pages" class="u-url" itemprop="url">
+    <span class="prefix">[GitHub Blog]</span>
+
+
+    <span>개별 카테고리 페이지를 자동으로 생성하게 하였다
+</span>
+
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-03-04T00:00:00+09:00">March 4, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#수동으로-페이지-만들기">수동으로 페이지 만들기</a></li><li><a href="#페이지-생성을-자동화할-방법-모색">페이지 생성을 자동화할 방법 모색</a><ul><li><a href="#jekyllgenerator">Jekyll::Generator</a></li><li><a href="#빠른-ruby-언어-공부">빠른 Ruby 언어 공부</a></li><li><a href="#사용자-플러그인-작성">사용자 플러그인 작성</a></li><li><a href="#새로운-카테고리-페이지-주소를-적용">새로운 카테고리 페이지 주소를 적용</a></li></ul></li><li><a href="#github-pages에-적용">GitHub Pages에 적용</a><ul><li><a href="#github-action을-사용하여-빌드">GitHub Action을 사용하여 빌드</a></li></ul></li><li><a href="#마무리">마무리</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>2022년 3월 2일, 블로그에 카테고리 페이지를 자동으로 생성하는 기능을 추가하였다.</p>
+
+<p>레이아웃은 Minimal Mistakes 테마가 기본으로 제공하는 <code class="language-plaintext highlighter-rouge">_layout/category.html</code>를 사용하였다. (개별 카테고리 페이지 레이아웃이 Minimal Mistakes에서 기본으로 제공하는 레이아웃 중에 있었다.)</p>
+
+<h2 id="수동으로-페이지-만들기">수동으로 페이지 만들기</h2>
+
+<p>처음부터 자동으로 카테고리 페이지를 생성하게 한 것은 아니었다. 각 카테고리별로 페이지를 따로 만들어주었다. 당시 디렉터리 구조를 보면 아래와 같았다.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
+├── _config.yml
+├── _pages/
+│   ├── categories/
+│   │   │   # 카테고리 별 페이지들
+│   │   ├── algorithm.md
+│   │   ├── baekjoon-online-judge.md
+│   │   ├── blog-dev.md
+...
+        └── macos.md
+│   ├── 404.md
+│   └── categories.md
+...
+</code></pre></div></div>
+
+<p>각 카테고리 페이지를 만들 때에는 <code class="language-plaintext highlighter-rouge">_pages/categories/카테고리_명(slugify).md</code> 파일을 생성하고, 각 파일마다 Front matter의 <code class="language-plaintext highlighter-rouge">layout</code> 속성에 <code class="language-plaintext highlighter-rouge">category</code>를 부여했다.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Blog Dev</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">/categories/blog-dev/</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">category</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>이렇게 생성한 페이지는 <strong>빈 페이지</strong>이다. 그 이유는 아래 두 파일을 살펴보면 알 수 있다.</p>
+
+<ul>
+  <li><a href="https://github.com/mmistakes/minimal-mistakes/blob/master/_layouts/category.html">_layouts/category.html</a></li>
+  <li><a href="https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/posts-category.html">_includes/posts-category.html</a></li>
+</ul>
+
+<p>두 페이지가 주고받는 <code class="language-plaintext highlighter-rouge">taxonomy</code> 라는 속성에 주목해보자. 이 속성은 <code class="language-plaintext highlighter-rouge">_includes/posts-category.html</code>에서 <code class="language-plaintext highlighter-rouge">site.categories[include taxonomy]</code> 라는 구문을 통해 카테고리를 선택하는데 사용된다. 이 속성을 생성할 페이지의 머릿말에 추가해야 한다는 것을 알 수 있다.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _pages/categories/blog-dev.md</span>
+
+<span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Blog Dev</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">/categories/blog-dev/</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">category</span>
+<span class="na">taxonomy</span><span class="pi">:</span> <span class="s">Blog Dev</span>
+<span class="nn">---</span>
+
+<span class="s">깃헙 블로그 관련 포스트 모음입니다.</span>
+
+</code></pre></div></div>
+
+<p>위와 같이 파일을 생성해두고 다시 <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> 명령을 실행해보면 지정한 주소에 카테고리 페이지가 생성되어 있음을 확인할 수 있다.</p>
+
+<p>단, 이런식으로 <strong>각 카테고리 페이지를 직접 만들어야 한다는건 상당히 번거로운 일이다</strong>. 만약 새로운 카테고리가 생기거나 없어진다고 하면, 내가 항상 위의 카테고리 페이지들을 함께 관리해낼 수 있을까… 난 자신이 없다.</p>
+
+<h2 id="페이지-생성을-자동화할-방법-모색">페이지 생성을 자동화할 방법 모색</h2>
+
+<p>내가 코딩을 좋아하는 이유는, 무지성 단순 반복 작업을 절대 귀찮아하기 때문이다. 정말 극혐이다. 그래서 카테고리 페이지 생성역시 자동화 할 방법이 없나 구색하기 시작했다.</p>
+
+<p>처음에는 liquid 템플릿 언어를 이용하면 될 거라는 생각으로 시작했다. 하지만 liquid 템플릿 언어를 공부하면 할 수록 liquid의 한계를 깨달았고 다른 방법을 모색해야 한다는 결론에 다다랐다.</p>
+
+<p>그러던 중, Jekyll의 공식문서에서 Generator 라는 것을 알게되었다.</p>
+
+<h3 id="jekyllgenerator">Jekyll::Generator</h3>
+
+<p><a href="https://jekyllrb.com/docs/plugins/generators/">https://jekyllrb.com/docs/plugins/generators/</a></p>
+
+<blockquote>
+  <ul>
+    <li>Jekyll이 사용자 규칙에 따라 추가 컨텐츠를 생성하길 원한다면, generator를 만들어 사용할 수 있다.</li>
+    <li>기본적으로, Jekyll은 “_plugins/” 디렉토리에 위치하는 generator를 찾아본다.</li>
+  </ul>
+</blockquote>
+
+<p>사용자 플러그인을 통해 페이지를 생성할 수 있고, 이는 Ruby 언어로 작성하는 모양이다.</p>
+
+<p>위 문서에서 소개하는 새로운 페이지를 생성하는 generator 예제를 베이스로 하여 새 플러그인을 작성하기로 하였다.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">SamplePlugin</span>
+  <span class="k">class</span> <span class="nc">CategoryPageGenerator</span> <span class="o">&lt;</span> <span class="no">Jekyll</span><span class="o">::</span><span class="no">Generator</span>
+    <span class="n">safe</span> <span class="kp">true</span>
+
+    <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
+      <span class="n">site</span><span class="p">.</span><span class="nf">categories</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">category</span><span class="p">,</span> <span class="n">posts</span><span class="o">|</span>
+        <span class="n">site</span><span class="p">.</span><span class="nf">pages</span> <span class="o">&lt;&lt;</span> <span class="no">CategoryPage</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">posts</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Subclass of `Jekyll::Page` with custom method definitions.</span>
+  <span class="k">class</span> <span class="nc">CategoryPage</span> <span class="o">&lt;</span> <span class="no">Jekyll</span><span class="o">::</span><span class="no">Page</span>
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">posts</span><span class="p">)</span>
+      <span class="vi">@site</span> <span class="o">=</span> <span class="n">site</span>             <span class="c1"># the current site instance.</span>
+      <span class="vi">@base</span> <span class="o">=</span> <span class="n">site</span><span class="p">.</span><span class="nf">source</span>      <span class="c1"># path to the source directory.</span>
+      <span class="vi">@dir</span>  <span class="o">=</span> <span class="n">category</span>         <span class="c1"># the directory the page will reside in.</span>
+
+      <span class="c1"># All pages have the same filename, so define attributes straight away.</span>
+      <span class="vi">@basename</span> <span class="o">=</span> <span class="s1">'index'</span>      <span class="c1"># filename without the extension.</span>
+      <span class="vi">@ext</span>      <span class="o">=</span> <span class="s1">'.html'</span>      <span class="c1"># the extension.</span>
+      <span class="vi">@name</span>     <span class="o">=</span> <span class="s1">'index.html'</span> <span class="c1"># basically @basename + @ext.</span>
+
+      <span class="c1"># Initialize data hash with a key pointing to all posts under current category.</span>
+      <span class="c1"># This allows accessing the list in a template via `page.linked_docs`.</span>
+      <span class="vi">@data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'linked_docs'</span> <span class="o">=&gt;</span> <span class="n">posts</span>
+      <span class="p">}</span>
+
+      <span class="c1"># Look up front matter defaults scoped to type `categories`, if given key</span>
+      <span class="c1"># doesn't exist in the `data` hash.</span>
+      <span class="n">data</span><span class="p">.</span><span class="nf">default_proc</span> <span class="o">=</span> <span class="nb">proc</span> <span class="k">do</span> <span class="o">|</span><span class="n">_</span><span class="p">,</span> <span class="n">key</span><span class="o">|</span>
+        <span class="n">site</span><span class="p">.</span><span class="nf">frontmatter_defaults</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">relative_path</span><span class="p">,</span> <span class="ss">:categories</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="c1"># Placeholders that are used in constructing page URL.</span>
+    <span class="k">def</span> <span class="nf">url_placeholders</span>
+      <span class="p">{</span>
+        <span class="ss">:category</span>   <span class="o">=&gt;</span> <span class="vi">@dir</span><span class="p">,</span>
+        <span class="ss">:basename</span>   <span class="o">=&gt;</span> <span class="n">basename</span><span class="p">,</span>
+        <span class="ss">:output_ext</span> <span class="o">=&gt;</span> <span class="n">output_ext</span><span class="p">,</span>
+      <span class="p">}</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h3 id="빠른-ruby-언어-공부">빠른 Ruby 언어 공부</h3>
+
+<p>우선 Ruby 언어를 간단히 공부할 필요가 있었다. 감으로 알 수 있는 건 다음과 같았다.</p>
+
+<blockquote>
+  <ul>
+    <li>모듈과 클래스 개념은 이미 어느정도 익숙하다.</li>
+    <li><code class="language-plaintext highlighter-rouge">&lt;</code> 기호는모종의 대입문으로 쓰이는 것 같다. (<code class="language-plaintext highlighter-rouge">C++</code>의 <code class="language-plaintext highlighter-rouge">cin &gt; variable</code> 처럼 연산자 오버라이드일 수도 있음에 유의.)</li>
+    <li>end로 블럭을 닫는 문법은 쉘 스크립트, Basic 언어 등에서 겪어보아 익숙한 것 같다.</li>
+    <li><code class="language-plaintext highlighter-rouge">Jekyll::Generator</code>의 <code class="language-plaintext highlighter-rouge">::</code> 은 C++의 namespace 개념과 비슷한 것 같다.</li>
+    <li>주석이 친절해 각 함수의 역할은 대충 알 것 같다.</li>
+  </ul>
+</blockquote>
+
+<p>이어서 잘 모르겠는것들을 하나씩 찾아보았다.</p>
+
+<blockquote>
+  <ul>
+    <li><code class="language-plaintext highlighter-rouge">@</code>가 변수명 앞에 붙으면, 이는 인스턴스 변수임을 의미한다.<a href="https://stackoverflow.com/questions/14319347/variables-in-ruby-on-rails">(참조)</a></li>
+    <li><code class="language-plaintext highlighter-rouge">=&gt;</code> 연산자는 해쉬(딕셔너리) 자료형의 키에 값을 할당할 때 사용하는 연산자이다. <a href="https://stackoverflow.com/questions/6393872/what-is-the-equals-greater-than-operator-in-ruby">(참조)</a></li>
+  </ul>
+</blockquote>
+
+<h3 id="사용자-플러그인-작성">사용자 플러그인 작성</h3>
+
+<p>Ruby 언어를 어느정도 사용할 수는 있을 정도로 공부했다. 계속해서, 아래와 같이 사용자 플러그인을 필요에 맞게 손보았다.</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@@ -1,4 +1,4 @@</span>
+<span class="gd">- module SamplePlugin
+</span><span class="gi">+ module CategoryPageGeneratingPlugin
+</span>    class CategoryPageGenerator &lt; Jekyll::Generator
+      safe true
+
+@@ -24,7 +24,11 @@ def initialize(site, category, posts)
+      # Initialize data hash with a key pointing to all posts under current category.
+      # This allows accessing the list in a template via `page.linked_docs`.
+      @data = {
+<span class="gd">-       'linked_docs' =&gt; posts
+</span><span class="gi">+       'linked_docs' =&gt; posts,
++       'title' =&gt; category,
++       'layout' =&gt; 'category',
++       'permalink' =&gt; 'categories/:category/',
++       'taxonomy' =&gt; category,
+</span>      }
+
+      # Look up front matter defaults scoped to type `categories`, if given key
+</code></pre></div></div>
+
+<p>이제 번거롭게 <code class="language-plaintext highlighter-rouge">_pages/categories/카테고리_명.md</code> 파일을 일일이 만들어주지 않아도 알아서 카테고리들이 생성된다!</p>
+
+<p>…다만, 주소 패턴을 <code class="language-plaintext highlighter-rouge">'permalink' =&gt; 'categories/:category/'</code>로 해두어서 그런지, <code class="language-plaintext highlighter-rouge">/categories/Baekjoon%20Online%20Judge/</code>와 같이 못생긴 url encoded 주소로 부여되었다.</p>
+
+<p>좀 더 깔끔한 slugified 스타일로 통일하고 싶어, Jekyll API를 조사해보다 관련 기능을 제공하는 메소드가 있는 것을 확인하여 코드를 조금 수정하였다.</p>
+
+<ul>
+  <li><a href="https://www.rubydoc.info/gems/jekyll/Jekyll%2FUtils:slugify"><code class="language-plaintext highlighter-rouge">Jekyll::Utils#slugify</code></a></li>
+</ul>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@@ -14,7 +14,7 @@</span> class CategoryPage &lt; Jekyll::Page
+    def initialize(site, category, posts)
+      @site = site             # the current site instance.
+      @base = site.source      # path to the source directory.
+<span class="gd">-     @dir  = category         # the directory the page will reside in.
+</span><span class="gi">+     @dir  = Jekyll::Utils.slugify(category)         # the directory the page will reside in.
+</span>
+      # All pages have the same filename, so define attributes straight away.
+      @basename = 'index'      # filename without the extension.
+</code></pre></div></div>
+
+<h3 id="새로운-카테고리-페이지-주소를-적용">새로운 카테고리 페이지 주소를 적용</h3>
+
+<p>다음은 새로 생긴 변경사항들을 블로그 곳곳에 적용하는 디테일을 보여줄 차례이다. 다행히 변경해야 할 곳은 몇 군데 밖에 못 발견했다.</p>
+
+<ul>
+  <li>사이드 바의 카테고리 리스트 하이퍼링크.
+    <ul>
+      <li>
+        <p>_includes/sidebar__categories.html</p>
+
+        <div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@@ -13,7 +13,7 @@</span> &lt;h3 class="nav__title" style="padding-left: 0;"&gt;
+    {% for category in categories %}
+    {% assign title = category[0] %}
+    {% assign posts = category[1] %}
+<span class="gd">-   {% capture url %}/categories/{{ title }}{% endcapture %}
+</span><span class="gi">+   {% capture url %}/categories/{{ title | slugify }}{% endcapture %}
+</span>    &lt;li&gt;
+        &lt;a href="{{ url }}"{% if url == page.url %} class="active"{% endif %}&gt;
+        {{ title }}
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>각 페이지의 Breadcrumbs 카테고리 하이퍼링크.
+    <ul>
+      <li>
+        <p>_includes/breadcrumbs.html</p>
+
+        <div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@@ -1,6 +1,6 @@</span>
+    {% case site.category_archive.type %}
+    {% when "liquid" %}
+<span class="gd">-       {% assign path_type = "#" %}
+</span><span class="gi">+       {% assign path_type = "" %}
+</span>    {% when "jekyll-archives" %}
+        {% assign path_type = nil %}
+    {% endcase %}
+</code></pre></div>        </div>
+
+        <p>Breadcrumbs 는 조금 임시방편식으로 수정했다. 추후 기능 추가/제거 시 유의할 필요가 있다.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="github-pages에-적용">GitHub Pages에 적용</h2>
+
+<p>나는 GitHub Pages를 이용하여 <a href="https://hepheir.github.io/">https://hepheir.github.io/</a>에 블로그를 배포 하고 있다. 지금까지 만든 변경사항이 잘 적용되길 바라며 master 브랜치로 변경사항들을 Push하였다.</p>
+
+<p>잠시 후, 정상적으로 Deploy가 완료되었다고 뜨길래 어디 카테고리 페이지들이 잘 만들어졌나 확인해보려 찾아보았으나, 그렇지 않았다. …어째서? ㅠㅠ</p>
+
+<p>찾아보니 GitHub Pages의 자동 빌드를 사용하면 GitHub Pages가 지정한 특정 플러그인들을 제외하고는 적용되지 않는다고 한다. 이 문제를 해결할 방법으로 나는 두 가지 방법을 찾았다.</p>
+
+<ol>
+  <li>로컬 환경에서 직접 <code class="language-plaintext highlighter-rouge">bundle exec jekyll build</code>를 한 후, 빌드된 결과물을 업로드 하는 것.</li>
+  <li>GitHub Action을 통해 사용 플러그인에 제한이 없는 <code class="language-plaintext highlighter-rouge">jekyll</code>로 페이지를 빌드하도록 설정하는 것.</li>
+</ol>
+
+<h3 id="github-action을-사용하여-빌드">GitHub Action을 사용하여 빌드</h3>
+
+<p>그럼 바로 GitHub Action을 통해 Jekyll 사이트를 빌드하도록 설정해보자.</p>
+
+<ul>
+  <li><a href="https://github.com/marketplace/actions/jekyll-deploy-action">GitHub Action :: Jekyll Deploy Action</a></li>
+</ul>
+
+<p>설치방법도 매우 간단하다. 다음의 파일을 새로 작성하면 된다.</p>
+
+<ul>
+  <li><a href="https://github.com/marketplace/actions/jekyll-deploy-action#-usage">.github/workflows/build-jekyll.yml</a></li>
+</ul>
+
+<p>새로 만든 <code class="language-plaintext highlighter-rouge">build-jekyll.yml</code>을 푸쉬하고 경과를 지켜보면, 새로 생성된 <code class="language-plaintext highlighter-rouge">build_and_deploy</code> workflow에 의해 <code class="language-plaintext highlighter-rouge">gh-pages</code>라는 원격 브랜치가 새로 생성되고, 해당 브랜치에 빌드된 사이트가 있음을 확인 할 수 있다.</p>
+
+<p>마지막으로, 레포지토리의 [Settings - Pages - Source]로 이동하여 GitHub Pages가 호스팅할 파일들이 위치한 Branch로 <code class="language-plaintext highlighter-rouge">gh-pages</code>를 지정해준다.</p>
+
+<h2 id="마무리">마무리</h2>
+
+<p>이로서 개별 카테고리 페이지를 자동으로 생성하는 소스코드를 추가하고 적용하는 일련의 과정이 끝났다. <a href="https://hepheir.github.io/">https://hepheir.github.io/</a> 에서도 개별 카테고리 페이지들이 정상적으로 출력되는 걸 확인했다. 이 포스트에서 다룰 내용은 여기서 잘 끝났다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그 </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#minimal-mistakes" class="page__taxonomy-item p-category" rel="tag">Minimal Mistakes</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리 </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#github-blog" class="page__taxonomy-item p-category" rel="tag">GitHub Blog</a><span class="sep">, </span>
+    
+      <a href="/categories/#side-project" class="page__taxonomy-item p-category" rel="tag">Side Project</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트</strong> <time class="dt-published" datetime="2022-03-04T00:00:00+09:00">March 4, 2022</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/research/others/infinity" class="pagination--pager" title="Python 에서 무한대를 표현하는 법
+">이전</a>
+    
+    
+      <a href="/side%20project/jekyll%20n%20hyde/jekyll-n-hyde-0.0.1" class="pagination--pager" title="Jekyll N Hyde를 만들며
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="utterances-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/note/java%20&%20spring%20&%20algorithm/java-lotto-implementation" rel="permalink">
+    <span class="prefix">[Java & Spring & Algorithm]</span>
+
+
+    <span>자바 로또 프로젝트
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-17T00:00:00+09:00">April 17, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+  
+
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/side%20project/github%20blog/make-posts-private" rel="permalink">
+    <span class="prefix">[GitHub Blog]</span>
+
+
+    <span>Git Submodule을 이용한 Jekyll 블로그 테마와 포스트 분리
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-12T11:58:09+09:00">April 12, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/images/boj-og.png" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/baekjoon%20online%20judge/boj-2661" rel="permalink">
+    <span class="prefix">[BOJ]</span>
+
+
+    <span>2661번 - 좋은수열
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-08T15:09:50+09:00">April 8, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">https://boj.kr/2661
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/side%20project/github%20blog/quick-frontmatter" rel="permalink">
+    <span class="prefix">[GitHub Blog]</span>
+
+
+    <span>포스트 머릿말 빠르게 작성하기 (VS Code User Snippets)
+</span>
+
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-04-07T13:06:03+09:00">April 7, 2022</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">새로 포스트를 작성할 때 머릿말(Front Matter)을 작성하는 건 정말 번거롭습니다. 머릿말을 작성하는 것이 귀찮아서 완성되지 못하고 사라진 글감들이 제법 있는데, 이러한 고민을 Visual Studio Code의 사용자 코드조각으로 해결해보고자 합니다.
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id" role="search">
+    <label class="sr-only" for="cse-search-input-box-id">
+      Enter your search term...
+    </label>
+    <input type="search" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results">
+    <gcse:searchresults-only></gcse:searchresults-only>
+  </div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/Hepheir" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 김동주. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '0f64ffd396fea8281';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+    $(document).ready(function () {
+      $('input#cse-search-input-box-id').on('keyup', function () {
+        googleCustomSearchExecute();
+      });
+    });
+  
+</script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ5XL7PJ98"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZ5XL7PJ98', { 'anonymize_ip': false});
+</script>
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'Hepheir/hepheir.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+<!-- LaTex Support Start -->
+<script type="text/javascript" async
+	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<!-- LaTex Support End -->
+
+
+  </body>
+</html>
